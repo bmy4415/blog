@@ -1,5 +1,5 @@
 ## Table of Contents
-- [Reason why I write blog] (#reason-why-i-write-blog)
+- [Reason why I write blog](#reason-why-i-write-blog)
 - [Reason why I select github repo as blog place](#reason-why-i-select-github-repo-as-blog-place)
 
 ### Reason why I write blog
