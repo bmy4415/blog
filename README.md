@@ -1,6 +1,5 @@
-## This is the place where I write my own blog.
-
 ## Table of Contents
+- (#reason-why-i-select-github-repo-as-blog-place)
 
 ### Reason why I select github repo as blog place
 I tried several blog templates, e.g, medium, hugo, ...etc. But since I do not
