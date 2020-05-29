@@ -55,7 +55,7 @@ if __name__ == "__main__":
 </script>
 ```
 
-<img src="/imgs/img1.png"></img></br>
+<img src="/imgs/img1.png" width="500px" height="200px"></img></br>
 
 
 ### Summary
