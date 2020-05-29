@@ -2,6 +2,7 @@
 - [Reason why I write blog](#reason-why-i-write-blog)
 - [Reason why I select github repo as blog place](#reason-why-i-select-github-repo-as-blog-place)
 - [Linux tmp directory](/linux-tmp-directory.md)
+- [Flask CORS expost header](/flask-)
 
 ### Reason why I write blog
 I forget thigs I have done/studied frequently. For example, in the past I was wokring
