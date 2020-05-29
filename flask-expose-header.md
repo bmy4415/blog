@@ -55,8 +55,8 @@ if __name__ == "__main__":
 </script>
 ```
 
-<img src="/imgs/img1.png" width="1500px" height="500px"></img></br>
-
+<img src="/imgs/img1.png" width="900px" height="120px"></img></br>
+<!-- [See result as image file](/imgs/img1.png) -->
 
 ### Summary
 You can add `expose_headers` argument when creating CORS instance from flask to
