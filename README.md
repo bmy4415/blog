@@ -3,6 +3,7 @@
 - [Reason why I select github repo as blog place](#reason-why-i-select-github-repo-as-blog-place)
 - [Linux tmp directory](/linux-tmp-directory.md)
 - [Flask CORS expost header](/flask-cors-expose-header.md)
+- [how-to-fix-0x803701012-error-when-upgrading-from-wsl1-to-wsl2.md](/how-to-fix-0x803701012-error-when-upgrading-from-wsl1-to-wsl2.md)
 
 ### Reason why I write blog
 I forget thigs I have done/studied frequently. For example, in the past I was wokring
