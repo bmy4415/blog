@@ -28,6 +28,11 @@
         visited = [False for all vertices]
         finished = [False for all vertices]
         answer = []
+
+        for vertex in all_vertices:
+          if indegree[vertex] == 0:
+            dfs(vertex)
+
         dfs(src, visited, finished, answer):
           visited[src] = True
 
