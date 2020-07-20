@@ -1,4 +1,52 @@
 ## This is TIL (Today I Learned) for logging what I learned
+- 2020.07.19
+  - topological sort
+    - ordering of vertices in graph such that edge (u, v) leads to order of u -> v
+    - example code [link](https://github.com/BaeInpyo/ProgrammingStudy/blob/master/leetcode/july_challenge/course_schedule_2/sjw.py)
+    - there are 2 soltuions
+      - BFS
+        ```
+        indegree <= count indegree
+        queue = [vertex with 0 indegrees]
+        answer = []
+        while queue:
+          curr = queue.pop()
+          answer.append(curr)
+          for next_vertex in curr.neighbors:
+            indegree[next_vertex] -= 1
+            if indegree[next_vertex] == 0:
+              queue.append(next_vertex)
+
+        if len(answer) < number of vertices:
+          return -1 # this means cycle exists
+
+        return answer
+        ```
+      - DFS
+        ```
+        keep 2 lists, visited and finished to detect cycle
+        visited = [False for all vertices]
+        finished = [False for all vertices]
+        answer = []
+        dfs(src, visited, finished, answer):
+          visited[src] = True
+
+          for next_vertex in src.neighbors:
+            if visited[next_vertex] but not finished[next_vertex]:
+              return # this means cycle
+
+            if not visited[next_vertex]:
+              dfs(next_vertex)
+
+          finished[src] = True
+          answer.append(src)
+
+        # check if cycle exists
+        if len(answer) < number of vertices:
+          return -1
+
+        return answer[::-1] # reverse order of bfs is answer of tpsort
+        ```
 - 2020.07.10
   - in linux, fd (file descriptor) limit is applied per process ([link](https://unix.stackexchange.com/questions/55319/are-limits-conf-values-applied-on-a-per-process-basis))
   - you can check limits of running process with `cat /proc/<pid>/limits`
