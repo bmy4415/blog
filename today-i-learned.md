@@ -1,4 +1,28 @@
 ## This is TIL (Today I Learned) for logging what I learned
+- 2020.07.20
+  - Counter in python
+  - Counter is standard library of python, so you can use after import
+    - `from collections import Counter`
+  - Counter counts number of elements in iterable objects and return dict-like object
+    ```
+    # with Counter
+    from collections import Counter
+    arr = [1,2,3,1,2,3,1,2,3]
+    counter = Counter(arr)
+    counter.items() # dict_items([(1, 3), (2, 3), (3, 3)])
+    counter[1]      # 3
+
+    # without Counter
+    counter = dict()
+    arr = [1,2,3,1,2,3,1,2,3]
+    for num in arr:
+      if num in counter:
+        counter[num] += 1
+      else:
+        counter[num] = 1
+
+    counter # {1: 3, 2: 3, 3: 3}
+    ```
 - 2020.07.19
   - topological sort
     - ordering of vertices in graph such that edge (u, v) leads to order of u -> v
