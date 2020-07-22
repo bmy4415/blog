@@ -1,4 +1,12 @@
 ## This is TIL (Today I Learned) for logging what I learned
+
+- 2020.07.22
+  - linux uniq command
+    - http://2min2code.com/articles/uniq_command_intro
+    - example) `ls -al /proc/24686/fd | awk '{print $11}' | uniq` will show unique lines
+    - `uniq -u` only prints lines that are unique, i.e, if duplicates exists, this does not print any line
+    - `uniq -d` only prints lines that has duplicate lines
+    - `uniq -c` prints count for each line
 - 2020.07.20
   - Counter in python
   - Counter is standard library of python, so you can use after import
