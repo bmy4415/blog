@@ -1,5 +1,10 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+- 2020.07.27
+  - __init__.py file in python language
+    - **specify current working directory is part of package** which can be imported
+    - it this file does not exist, there must be an import error
+
 - 2020.07.22
   - linux uniq command
     - http://2min2code.com/articles/uniq_command_intro
