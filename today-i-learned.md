@@ -1,5 +1,7 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+- 2020.07.29
+  - To write `testable` code, avoid global variables. Instead, inject them into each function's parameter list
 - 2020.07.27
   - __init__.py file in python language
     - **specify current working directory is part of package** which can be imported
