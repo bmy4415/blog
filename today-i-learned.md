@@ -1,5 +1,8 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+- 2020.07.30
+  - In python, to run multiple bash commands with subprocess, e.g, `echo "hi"; echo "hello"`, you must pass argument `shell=True`.
+  - subprocess cannot parse `;` therefore cannot run multiple commands
 - 2020.07.29
   - To write `testable` code, avoid global variables. Instead, inject them into each function's parameter list
 - 2020.07.27
