@@ -1,5 +1,18 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+- 2020.08.09
+  - socket
+    - network consists of many layers (e.g, OSI 7 layers, TCP/IP 4 layers)
+    - socket provides abstraction on network on behalf of developer. Developer can use socket without considering many layers, e.g, network access / internet layer in TCP/IP 4 layers
+    - TCP socket
+      - uses (IP, PORT) as namespace
+      - used for network communication
+    - UNIX domain socket
+      - uses filesystem as namespace
+      - used for IPC (inter process communication)
+    - in python, we can use built in `socket` module to communicate using socket
+      - [Unix domain socket example](https://pymotw.com/3/socket/uds.html)
+      - [TCP socket example](https://wiki.python.org/moin/TcpCommunication)
 - 2020.07.30
   - In python, to run multiple bash commands with subprocess, e.g, `echo "hi"; echo "hello"`, you must pass argument `shell=True`.
   - subprocess cannot parse `;` therefore cannot run multiple commands
