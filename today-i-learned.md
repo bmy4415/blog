@@ -1,5 +1,14 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+- 2020.08.11
+  - PIPE
+    - one possible way of IPC, i.e, communication between 2 processes
+    - when we call `A | B`, stdout of A will be stdin of B
+    - PIPE buffer resides in kernel space and it's size varies with OS. Typically 65536 bytes
+    - stdin buffer is differ from PIPE buffer. Size of stdin buffer is usually size of page.
+    - useful references
+      - https://mug896.github.io/bash-shell/buffering.html
+      - http://www.pixelbeat.org/programming/stdio_buffering/
 - 2020.08.09
   - socket
     - network consists of many layers (e.g, OSI 7 layers, TCP/IP 4 layers)
