@@ -1,5 +1,18 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+- 2020.08.23
+  - linux redirection
+    - In linux, redirection means changing a stream to another stream, e.g, changing stdout stream to file stream.
+    - Each process in linux usually has 3 stream by default, stdin(usually keyboard), stdout(usually screen), stderr(usually screen).
+    - `/dev/null` is special file which discards all data written to it.
+    - For example, let's review this command: `python test.py > output.txt 2> error.txt`
+      - `2` means stderr and `>` means redirection stream and overwrite it. So all error messages generated from test.py will be written to error.txt
+      - `1` stdout and you can skip writting `1` to command. stdout test.py will be over-written to output.txt
+      - For further information, `>>` also means redirection but append to stream. 
+    - For example, lets' review this command: `ls 2>/dev/null`
+      - Above commands run ls command and does not print any errors at screen because `2>/dev/null` means sending all error messages to `/dev/null` which discards received logs
+      - `2>/dev/null` is used when we don't want to print error messages to screen
+      - For further information, `python test.py > output.txt 2>&1` means writting both stdout and stderr to output.txt
 - 2020.08.11
   - PIPE
     - one possible way of IPC, i.e, communication between 2 processes
