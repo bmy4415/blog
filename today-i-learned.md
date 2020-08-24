@@ -1,5 +1,27 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+- 2020.08.24
+  - python mutable vs immutable
+    - In python, if an object is changable, we call it `mutable`. On the other hand, if an object is not changable, we call it `immutable`
+      - E.g, list is mutable because we can change list after it's creation
+      - E.g, tuple is immutable because we cannot change tuple once it's created
+    - Why python provides `mutable` and `immutable`?
+      - Comparison is very cheap for immutable objects because we only compare address of obejct. Immutable is proper for primitive types.
+      - Mutable is more efficient for some scenarios
+        - E.g, when we have huge array and we frequently change this array, mutable is much more effective than immutable. If array is immutable, we need to copy huge array whenever we change this array.
+    - **Tricky case**
+      -
+      ```
+      # temp.py
+      
+      a = [1,2,3]
+      b = [4,5,6]
+      c = (a, b)
+      print(c)  # ([1,2,3], [4,5,6])
+      a[0] = 100
+      print(c)  # ([100,2,3], [4,5,6])
+      ```
+      - Tuple c contains `address` of a and b. So, tuple cannot resist changes on a.
 - 2020.08.23
   - linux redirection
     - In linux, redirection means changing a stream to another stream, e.g, changing stdout stream to file stream.
