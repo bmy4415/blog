@@ -8,6 +8,9 @@
       - E.g, in case of VSCode, https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
     - More reference
       - https://blog.cookapps.io/guide/editorconfig/#%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%A4%EC%A0%95
+  - asdf
+    - asdf is powerful CLI which manages runtime version of many many languages
+    - https://github.com/asdf-vm/asdf
 - 2020.08.24
   - python mutable vs immutable
     - In python, if an object is changable, we call it `mutable`. On the other hand, if an object is not changable, we call it `immutable`
