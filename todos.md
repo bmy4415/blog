@@ -45,3 +45,9 @@ http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-1/
 http://beomy.tistory.com/13
 
 
+https://mywiki.wooledge.org/WrapperScript
+https://stockrow.com/DIS (주식관련)
+https://velog.io/@directorhwan59/%EC%9B%B9-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%97%90-URL%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%98%EA%B3%A0-%EC%B2%AB-%ED%99%94%EB%A9%B4%EC%9D%B4-%EC%B6%9C%EB%A0%A5%EB%90%98%EA%B8%B0%EA%B9%8C%EC%A7%80
+https://www.google.com/search?q=shortest+path+above+grid&oq=shortest+path+above+grid&aqs=chrome..69i57j0.5852j0j7&sourceid=chrome&ie=UTF-8
+https://towardsdatascience.com/graph-theory-bfs-shortest-path-problem-on-a-grid-1437d5cb4023
+
