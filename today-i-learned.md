@@ -1,5 +1,21 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+
+
+##### 2020.10.06
+- npx
+  - npx is, in short, node package `runner`.
+    - npx runs node pakcages.
+  - npm is node package `manager`.
+    - npm manages dependencies of node packages.
+  - Use case
+    - `create-react-app` is CLI (command line interface) which creates bootstraped react app.
+    - `cretae-react-app` comnand is not used frequently. You only run this command at the start of creating react project.
+    - Since most javascript pakcages are changed frequently, installing and managing `create-react-app` globally is tricky.
+    - You can use `npx` in this case. npx just runs (actually, install -> run -> delete) pakcages instead of installing it
+
+---
+
 - 2020.09.29
   - .editorconfig
     - I found this file first at https://github.com/asdf-vm/asdf
