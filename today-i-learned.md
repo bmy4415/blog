@@ -1,6 +1,12 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2020.10.20
+- .dockerignore
+  - Every file/directory exists in same level with `Dockerfile` is called `context`.
+  - `Context` is included when you create image from `Dockerfile`.
+  - Similar with `.gitignore`, `.dockerignore` excludes files when creating image from `Dockerfile`
 
+---
 
 ##### 2020.10.06
 - npx
