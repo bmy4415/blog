@@ -5,6 +5,7 @@
   - Every file/directory exists in same level with `Dockerfile` is called `context`.
   - `Context` is included when you create image from `Dockerfile`.
   - Similar with `.gitignore`, `.dockerignore` excludes files when creating image from `Dockerfile`
+  - For example, you can ignore `.vscode`, `.git`, `node_modules` directories which is not necessary for docker image.
 
 ---
 
