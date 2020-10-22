@@ -1,5 +1,19 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2020.10.22
+- DNS (Domain Name System)
+  - 컴퓨터를 나타내는 주소는 크게 2가지가있는데, 하나는 IP주소, 다른 하나는 domain name이다. 예를들어 google.com 이라는 주소창에 입력하는 문자열은 domain name이라고 하고 172.217.26.14라고 입력하는 숫자는 IP주소라고 한다.
+  - IP주소는 숫자로 이루어져있어 상대적으로 사람이 외우기 어렵기 때문에 보통은 domain name을 이용한다. 이때 domain name과 IP주소를 연결해주는 system을 DNS라고 한다. 즉 google.com이라는 주소는 사실은 172.217.26.14라는 IP주소로 어딘가에 매핑이되어있다.
+  - **즉 DNS는 domain name과 IP주소의 mapping을 저장하고있는 database라고 이해할 수 있다.** (실제로는 (domain name, ip주소) 뿐만아니라 (domain name, domain name) 등 다양한 종류의 mapping을 저장하고있다.)
+  - 각각의 maaping을 DNS Record라고 부르는데, 이 record에는 A, MX, CNAME, SOA등 여러가지 종류가 있다.
+    - https://win100.tistory.com/360 참고
+    - MX (Email Exchange) record는 아주 간단하게 말하면 email에 대한 DNS record이다. 예를들어 내가 `mydomain.com`이라는 domain name을 구입하고 `asdf@mydomain.com`과 같은 메일 서버를 구축하고 싶을 때, 메일서버를 직접 구축할 수도 있지만 naver, google 등에서 제공하는 메일서버 서비스를 이용할 수도 있다. 이때 MX record로 mydomain.com과 naver/google 등 이메일 서버 제공 업체의 domain을 연결하면, `asdf@mydomain.com`과 같은 이메일을 사용할 수 있다.
+    - A record는 (domain name, IP주소)의 mapping을 저장하는 record이다.
+    - CNAME record는 (domain name, domain name)의 mapping을 저장하는 record이다.
+
+
+---
+
 ##### 2020.10.20
 - .dockerignore
   - Every file/directory exists in same level with `Dockerfile` is called `context`.
