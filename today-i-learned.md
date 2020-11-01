@@ -1,5 +1,20 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2020.11.01
+- lint and formatter
+  - lint
+    - 직접 source code를 보고 버그, 컨벤션 등에 문제가 있는지 확인하는 tool
+  - formatter
+    - lint가 버그를 탐지할 수 있는데에 비하여 formatter은 주로 코드의 형식, 컨벤션 등을 확인한다.
+  - 예시
+    - javascript
+      - eslint (lint) + prettier (formatter)
+      - 두 tool을 서로 연동하여 사용할 수 있음
+    - python
+      - pylint (lint) + black (formatter)을 각각 사용
+
+---
+
 ##### 2020.10.22
 - DNS (Domain Name System)
   - 컴퓨터를 나타내는 주소는 크게 2가지가있는데, 하나는 IP주소, 다른 하나는 domain name이다. 예를들어 google.com 이라는 주소창에 입력하는 문자열은 domain name이라고 하고 172.217.26.14라고 입력하는 숫자는 IP주소라고 한다.
