@@ -1,5 +1,42 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2020.11.06
+- mongoose + typescript + subdocument
+  - typescript + mongoose를 이용할 때, 보통 하나의 collection을 표현하기위해 다음과 같이 `Document`를 상속하는 interface를 만든다.
+    ```
+    import { Document } from 'mongoose';
+    export interface User exnteds Document {
+      username: string;
+      age: number;
+    }
+    ```
+  - 그런데 subdocument를 이용할 때는, subdocument에 해당하는 interface가 `Document`를 상속하지 않아야 된다. (상속하면 type error가 뜬다.)
+    ```
+    import { Document } from 'mongoose';
+
+    # Correct
+    export interface Score {
+      subject: string;
+      score: number;
+    }
+
+    # Incorrect
+    export interface Score extends Document {
+      subject: string;
+      score: number;
+    }
+
+    export interface User extends Document {
+      username: string;
+      age: number;
+      scores: Score[];
+    }
+    ```
+  - reference
+    - https://medium.com/@agentwhs/complete-guide-for-typescript-for-mongoose-for-node-js-8cc0a7e470c1
+
+---
+
 ##### 2020.11.01
 - lint and formatter
   - lint
