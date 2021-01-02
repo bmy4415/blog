@@ -1,5 +1,12 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.02
+- https://subicura.com/k8s/ (쿠버네티스 튜토리얼)
+  - service / ingress / volume / configmap 실습
+  
+
+---
+
 ##### 2020.11.06
 - mongoose + typescript + subdocument
   - typescript + mongoose를 이용할 때, 보통 하나의 collection을 표현하기위해 다음과 같이 `Document`를 상속하는 interface를 만든다.
