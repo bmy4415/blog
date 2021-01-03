@@ -1,9 +1,12 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.03
+- https://dev.to/oxodesign/series/8187
+  - typescript + jest + express + eslint + prettier 셋업
+
 ##### 2021.01.02
 - https://subicura.com/k8s/ (쿠버네티스 튜토리얼)
-  - service / ingress / volume / configmap 실습
-  
+  - service / ingress / volume / configmap 실습  
 
 ---
 
