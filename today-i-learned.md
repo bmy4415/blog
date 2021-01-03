@@ -1,10 +1,15 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
-##### 2021.01.03
+##### 2021.01.03 (2)
 - https://dev.to/oxodesign/series/8187
   - typescript + jest + express + eslint + prettier 셋업
+- https://www.ironin.it/blog/a-simple-kubernetes-cluster-on-aws.html
+  - aws EC2와 kubespray를 이용한 k8s cluster 구축
+  - https://snowdeer.github.io/kubernetes/2018/02/13/kubernetes-can-not-use-kubectl/
+    - kubectl 명령어 이용했을 때 `The connection to the server localhost:8080 was refused - did you specify the right host or port?` 에러 발생
+      - `/etc/kubernetes/admin.conf`를 `$HOME/.kube/config`에 옮겨주면됨
 
-##### 2021.01.02
+##### 2021.01.02 (1)
 - https://subicura.com/k8s/ (쿠버네티스 튜토리얼)
   - service / ingress / volume / configmap 실습  
 
