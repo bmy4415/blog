@@ -1,5 +1,10 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.05 (3)
+- https://serverfault.com/questions/843243/ssh-jumping-with-aliases-and-f
+  - proxyhost에 관한 ssh config
+  - ssh -F <config file>을 이용하면 ProxyCommand directive에서 현재 config를 사용하지 않아서 문제가 생김 => `ProxyJump` directive 이용하거나 Proxycommand에 -F 추가해줘야함
+
 ##### 2021.01.03 (2)
 - https://dev.to/oxodesign/series/8187
   - typescript + jest + express + eslint + prettier 셋업
