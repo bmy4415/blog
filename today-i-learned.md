@@ -3,7 +3,25 @@
 ##### 2021.01.05 (3)
 - https://serverfault.com/questions/843243/ssh-jumping-with-aliases-and-f
   - proxyhost에 관한 ssh config
-  - ssh -F <config file>을 이용하면 ProxyCommand directive에서 현재 config를 사용하지 않아서 문제가 생김 => `ProxyJump` directive 이용하거나 Proxycommand에 -F 추가해줘야함
+  - `~/.ssh/config` 대신 custom config file을 이용하여
+    ```bash
+    ssh -F <config file>
+    ```
+    과 같은 형식의 명령어를 사용할 때, `ProxyCommand` directive에서는 `<config file>`을 인식하지 못하고 default config인 `~/.ssh/config`를 이용함. 그 결과
+    ```bash
+    ProxyCommand ssh -F <config file> bastion
+    ```
+    과 같이 `<config file>` 내부에 자신의 경로를 한번 더 써줘야하는 번거로움 및 지저분함이 있음.  
+    - `ProxyCommand` 대신 `ProxyJump` directive를 이용하면 깔끔함 (>= OpenSSH 7.3)
+- ssh-copy-id 명령어
+  - ssh로 linux machine에 접속하는 방법은 크게 2가지가 있음
+    - password 인증
+    - key file 인증
+  - password 인증을 위해서는 `/etc/ssh/sshd_config`에서 `PasswordAuthentication no` 설정을 추가해야함
+  - password 인증을 enable 한 후 password없이 접근하고 싶을 때 `ssh-copy-id` 명령어를 이용하면됨
+    - `ssh-copy-id`는 `~/.ssh/id_rsa.pub`파일을 ssh target host의 `~/.ssh/authorized_keys` 파일에 추가해줌
+    - `ssh-copy-id` 명령어를 이용하지 않고 직접 복사해서 추가해줘도 됨
+    - `~/.ssh/authorized_keys`에 추가해준 이후에는 별도의 인증없이 ssh 접속 가능!
 
 ##### 2021.01.03 (2)
 - https://dev.to/oxodesign/series/8187
