@@ -1,6 +1,16 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.01.05 (3)
+- aws VPC / subnet / IG(InternetGateway) / NAT(Natwork Addess Translation)
+  - VPC는 `격리된` 네트워크 공간
+  - VPC와 외부를 연결하기 위해서는 반드시 IG가 필요함
+  - subnet은 VPC를 다시 나눈 sub network 영역
+    - 흔히 public subnet과 private subnet으로 나누는데 aws에서는 단순히 subnet의 생성만을 지원할 뿐이고 public subnet처럼 이용하려면 subnet의 RT(route table)에 IG를 달아줘야함
+    - **`public subnet 내부에 존재하는 component라도 public IP가 없으면 internet access가 불가능함`**
+      - 심지어 public subnet 내부에 public IP가 없는 EC2 instance의 할당도 가능함 => internet access는 불가능
+    - private subnet에서는 IG가 없으므로 당연히 internet access가 안되지만 NAT를 추가하면 internet access 가능
+      - NAT는 자체적으로 public IP를 갖고 NAT를 생성할 때 subnet을 지정하는데 이때 public subnet을 지정해줘야함
+      - 즉 NAT는 자체 public IP를 갖고 이 IP와 IG를 이용해서 private subnet 내부의 component들에게 internet access를 가능하게 해줌
 - https://serverfault.com/questions/843243/ssh-jumping-with-aliases-and-f
   - proxyhost에 관한 ssh config
   - `~/.ssh/config` 대신 custom config file을 이용하여
@@ -22,6 +32,77 @@
     - `ssh-copy-id`는 `~/.ssh/id_rsa.pub`파일을 ssh target host의 `~/.ssh/authorized_keys` 파일에 추가해줌
     - `ssh-copy-id` 명령어를 이용하지 않고 직접 복사해서 추가해줘도 됨
     - `~/.ssh/authorized_keys`에 추가해준 이후에는 별도의 인증없이 ssh 접속 가능!
+    
+- kubespray
+  - 1개의 bastion과 n개의 cluster node들이 있을 때도 kubespray를 이용해서 k8s cluster 구축이 가능함. 단 아래의 예시에서는 다음의 조건을 가정
+    - bastion => node로 접속할 때 모두 동일한 key file을 이용한다고 가정
+    - 각 node들은 internet access가 가능함
+      - internet access가 불가능한 경우는 직접 docker registry, file server 등을 구축해야하는데 이 부분까지는 수행하지 못했음
+  1. clone kubespray repo
+  2. ssh config file 생성
+    ```
+    # ssh.cfg
+
+    # node 접속정보
+    Host <node ip 대역, e.g, 10.*.*.*>
+    User <ssh login user, e.g, ubuntu>
+    IdentityFile <bastion=>node 접속시 사용하는 key file>
+    ProxyJump bastion1
+
+    # bastion 접속정보
+    Host bastion1
+      Hostname <bastion host ip or bastion domain name>
+      User <ssh login user>
+      IdentityFile <local=>bastion 접속시 사용하는 key file>
+    ```
+  3. modify `ansible.cfg` file
+    ```
+    # ansible.cfg
+
+    ...
+    [ssh_connection]
+    ...
+    ssh_args = -C -F ./ssh.cfg
+    ```
+  
+  4. create `inventory/inventory.cfg` file
+    ```
+    [all]
+    # node-c1
+    nodec1 ansible_host=10.1.3.111 ip=10.1.3.111 ansible_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+    # node-c2
+    nodec2 ansible_host=10.1.3.224 ip=10.1.3.224 ansible_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+    # node-c3
+    nodec3 ansible_host=10.1.3.71 ip=10.1.3.71 ansible_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+    # node-c4
+    nodec4 ansible_host=10.1.3.170 ip=10.1.3.170 ansible_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+
+    # bastion 접속정보
+    [bastion]
+    bastion1 ansible_host=13.125.65.133 ansible_user=ubuntu
+
+    [kube-master]
+    nodec1
+
+    [etcd]
+    nodec1
+
+    [kube-node]
+    nodec2
+    nodec3
+    nodec4
+
+    [k8s-cluster:children]
+    kube-node
+    kube-master
+
+    ```
+  5. run command
+  ```
+  ansible-playbook -i inventory/inventory.cfg -b -v cluster.yml
+  ```
+
+---
 
 ##### 2021.01.03 (2)
 - https://dev.to/oxodesign/series/8187
