@@ -1,6 +1,15 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.01.08 (4)
+- k8s service
+  - https://bcho.tistory.com/1262
+    - pod은 시작될 때 마다 새로운 random IP를 받음
+    - pod이 여러개일 경우 loadbalancing 기능도 있어야함
+    - 이를 보완하기위해 service 라는 resource가 생겨남
+      - service는 고정 IP를 받고 loadbalancing 기능을 수행할 수 있고 고유 DNS도 갖을 수 있음
+      - service는 selector를 이용해서 자신이 관리하고자하는 pod들을 정할 수 있음
+    - 하나의 service에 여러개의 port를 open할 수도 있음, e.g, HTTP(80), HTTPS(443)
+    - 여러개의 pod을 운영할 때 session 등을 위해 특정 client가 특정 pod에 지속적으로 연결하게 하려면 `sessionAffinity`를 이용할 수 있음
 - helm
   - https://velog.io/@makeitcloud/Kubernetes-Helm-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
     - helm은 chart repository에서 chart를 가져올 수 있음
