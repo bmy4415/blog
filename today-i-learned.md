@@ -2,9 +2,28 @@
 
 ##### 2021.01.08 (4)
 - helm
-  - https://thorsten-hans.com/getting-started-with-helm3
   - https://velog.io/@makeitcloud/Kubernetes-Helm-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
-  - mysql 배포 실패에 
+    - helm은 chart repository에서 chart를 가져올 수 있음
+    - chart 내부에는 k8s manifest file이 있고 helm은 내부적으로 kubectl을 이용해서 k8s resource를 배포함
+    - chart의 instance를 `release`라고 부름
+  - https://thorsten-hans.com/getting-started-with-helm3
+    - helm 3 (version 3.x)을 이용한 튜토리얼
+    - helm은 k8s를 위한 package manager
+      - node의 npm, python의 pip와 비슷한 역할
+    - k8s로 resource를 구성할 때 `.yaml` 형식의 manifest file을 이용하듯이 helm은 `set of manifest files`를 관리한다고 생각하면 됨
+    - `set of manifest files`를 chart 형식이라고 부르고 chart가 helm에서 관리하는 단위가 됨
+    - chart는 `.tgz` 형식으로 배포되며 해당 압축파일을 풀면 하나의 diretory가 나오는데 root directory 내부에는 다음과 같은 file 및 directory들이 존재함
+      - Chart.yml
+        - chart의 metadata
+        - `name`, `version`, `description`, `kubeVersion` 등의 정보가 들어감
+      - templates (dir)
+        - set of k8s manifest files
+        - 각 manifest file에는 변수로 값을 받을 수 있게 되어있음
+      - values.yaml
+        - `templates`에 존재하는 manifest file의 동적 변수값을 설정할 수 있음
+  - mysql chart 배포
+    - 내가 직접 k8s resource를 구성하는 것 보다 이미 구성되어진 유명한 셋팅을 사용하면 더 좋을것이라고 생각하여 helm 연습 겸 mysql chart (https://github.com/helm/charts/tree/master/stable/mysql)를 배포하려 시도하였음
+    - 결과적으로 실패하였는데 이와 관련하여 server fault에 질문을 올려놓은 상태 https://serverfault.com/questions/1049040/deploy-mysql-release-using-helm/1049068#1049068
 
 ---
 
