@@ -1,5 +1,13 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.08 (4)
+- helm
+  - https://thorsten-hans.com/getting-started-with-helm3
+  - https://velog.io/@makeitcloud/Kubernetes-Helm-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
+  - mysql 배포 실패에 
+
+---
+
 ##### 2021.01.05 (3)
 - aws VPC / subnet / IG(InternetGateway) / NAT(Natwork Addess Translation)
   - VPC는 `격리된` 네트워크 공간
