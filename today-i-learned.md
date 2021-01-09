@@ -1,5 +1,19 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.09 (5)
+- kubespray
+  ```
+  TASK [kubernetes/preinstall : Stop if even number of etcd hosts] *****************************************************************
+  fatal: [master1]: FAILED! => {
+      "assertion": "groups.etcd|length is not divisibleby 2",
+      "changed": false,
+      "evaluated_to": false,
+      "msg": "Assertion failed"
+  }
+  ```
+  - 위 error는 inventory에 etcd가 짝수개 정의되어있을 때 발생한다. etcd는 k8s의 state를 저장하는 곳으로 split brain 문제로 인해 홀수개가 정의되어야 한다. 아주 간단하게 설명하면 장애가 생겼을 때 홀etcd가 홀수개이면 더 많은 노드가 가르키는 값을 이용할 수 있지만 짝수개일 경우 정확히 반반으로 나뉘어 어떤것이 맞는것인지 확신할 수 없게 된다.
+    - [split brain](https://blog.naver.com/alice_k106/221310093541)
+
 ##### 2021.01.08 (4)
 - k8s service
   - https://bcho.tistory.com/1262
