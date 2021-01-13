@@ -1,5 +1,35 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.13 (6)
+- minIO
+  - [minIO operator](https://github.com/minio/operator)를 이용하여 k8s cluster위에 minIO (s3 compatible object storage) 구축
+    - StorageClass, PersistentVolume이 문제여서 처음에는 컨테이너를 띄우지도 못했는데 오늘 띄우는데까지 성공함
+    - 그러나 document가 outdated되어있고 k8s cluster가 aws private subnet안에 있어서 실제 webUI를 테스트해보지는 못하였음
+    - NodePort 등 k8s service를 이용하여 외부에 노출하는 방법 / k8s를 이용하지 않고 그냥 EC2위에 minIO를 띄우는 방법 등 2가지 방법이 있는데 시간관계상 EC2위에 minIO를 띄우는 것으로 대체하기로 함
+- ansible
+  - minIO를 k8s에 띄울때 여러개의 node에 PV에 mount할 directory를 만들어야 했는데 이를위해 간단하게 ansible 이용
+    > Ansible is a radically simple IT automation system. It handles configuration management, application deployment, cloud provisioning, ad-hoc task execution,  network automation, and multi-node orchestration. Ansible makes complex changes like zero-downtime rolling updates with load balancers easy.
+  - 아주 간략히 설명하자면 ansible은 여러 remote machine을 ssh를 이용하여 쉽게 관리하는 tool이라고 할 수 있음
+    - 예를들어, 나의 경우에는 5개의 k8s node에 동일한 directory를 생성해야했는데 이를 ansible을 이용하여 수월하게 진행하였음
+      ```bash
+      ansible -i inventory.ini all -a "mkdir -p ~/minIO"
+      ```
+  - components
+    - inventory
+      - ansible에서 관리하는 remote machine을 명시해놓은 파일
+      - 대표적으로 `.ini`, `.yaml`의 확장자를 이용할 수 있음
+        ```
+        # inventory.ini
+        [all]
+        node1 ansible_host=10.1.3.58 ansible_python_interpreter=/usr/bin/python3
+        node2 ansible_host=10.1.3.191 ansible_python_interpreter=/usr/bin/python3
+        node3 ansible_host=10.1.3.88 ansible_python_interpreter=/usr/bin/python3
+        node4 ansible_host=10.1.3.74 ansible_python_interpreter=/usr/bin/python3
+        node5 ansible_host=10.1.3.228 ansible_python_interpreter=/usr/bin/python3
+        ```
+
+---
+
 ##### 2021.01.09 (5)
 - kubespray
   ```
@@ -13,6 +43,8 @@
   ```
   - 위 error는 inventory에 etcd가 짝수개 정의되어있을 때 발생한다. etcd는 k8s의 state를 저장하는 곳으로 split brain 문제로 인해 홀수개가 정의되어야 한다. 아주 간단하게 설명하면 장애가 생겼을 때 홀etcd가 홀수개이면 더 많은 노드가 가르키는 값을 이용할 수 있지만 짝수개일 경우 정확히 반반으로 나뉘어 어떤것이 맞는것인지 확신할 수 없게 된다.
     - [split brain](https://blog.naver.com/alice_k106/221310093541)
+    
+---
 
 ##### 2021.01.08 (4)
 - k8s service
