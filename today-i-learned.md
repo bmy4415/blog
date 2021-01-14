@@ -4,6 +4,13 @@
 - minIO
   - ubuntu에서 minIO 서버 띄우기
     - https://www.lesstif.com/system-admin/minio-server-open-source-object-storage-server-74743911.html
+    - minIO는 단일 binary 파일로 바로 띄울 수 있어서 설치가 매우 편리함
+    - ip/port binding을 하기위해 다음의 command를 이용하면됨
+      ```bash
+      ./minio server --address 0.0.0.0:9000 <data directory>
+      ```
+    - ip를 `0.0.0.0`으로 binding하는것보다 nginx 등의 reverse proxy를 이용하는게 더 일반적인 방법으로 보임
+      - https://docs.min.io/docs/setup-nginx-proxy-with-minio.html
 
 ---
 
