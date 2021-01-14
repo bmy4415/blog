@@ -1,5 +1,11 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.14 (7)
+- minIO
+  - ubuntu에서 minIO 서버 띄우기
+
+---
+
 ##### 2021.01.13 (6)
 - minIO
   - [minIO operator](https://github.com/minio/operator)를 이용하여 k8s cluster위에 minIO (s3 compatible object storage) 구축
