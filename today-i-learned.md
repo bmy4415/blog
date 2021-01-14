@@ -3,6 +3,7 @@
 ##### 2021.01.14 (7)
 - minIO
   - ubuntu에서 minIO 서버 띄우기
+    - https://www.lesstif.com/system-admin/minio-server-open-source-object-storage-server-74743911.html
 
 ---
 
