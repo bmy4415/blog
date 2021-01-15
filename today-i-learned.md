@@ -5,6 +5,9 @@
   - https://github.com/Nyr/openvpn-install
   - https://ncube.net/%EC%9A%B0%EB%B6%84%ED%88%AC-18-04-%EC%97%90-openvpn-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95/
   - road warrior installer로 간편하게 openVPN 서버 구축 
+- nodejs
+  - aws EC2 ubuntu 18.04에 설치된 node/npm은 8.10/3.52였는데 이를 업그레이드 쉽게 업그레이드 할 수 있음
+    - https://velopert.com/1351
 
 ---
 
