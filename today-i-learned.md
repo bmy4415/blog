@@ -1,5 +1,13 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.15 (8)
+- openVPN
+  - https://github.com/Nyr/openvpn-install
+  - https://ncube.net/%EC%9A%B0%EB%B6%84%ED%88%AC-18-04-%EC%97%90-openvpn-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95/
+  - road warrior installer로 간편하게 openVPN 서버 구축 
+
+---
+
 ##### 2021.01.14 (7)
 - minIO
   - ubuntu에서 minIO 서버 띄우기
