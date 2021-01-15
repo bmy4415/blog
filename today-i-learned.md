@@ -8,6 +8,9 @@
 - nodejs
   - aws EC2 ubuntu 18.04에 설치된 node/npm은 8.10/3.52였는데 이를 업그레이드 쉽게 업그레이드 할 수 있음
     - https://velopert.com/1351
+- private docker registry
+  - docker registry는 external 에서 접근할 때 TLS를 강제하므로 인증서 작업을 해줘야함
+    - https://novemberde.github.io/2017/04/09/Docker_Registry_0.html
 
 ---
 
