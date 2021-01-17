@@ -8,9 +8,17 @@
 - nodejs
   - aws EC2 ubuntu 18.04에 설치된 node/npm은 8.10/3.52였는데 이를 업그레이드 쉽게 업그레이드 할 수 있음
     - https://velopert.com/1351
+- k8s에 react app 띄우기
+  - nginx를 이용하여 react build file을 serving하면됨
+    - https://koala42.com/create-a-react-app-in-kubernetes/
+    - https://dev.to/rieckpil/deploy-a-react-application-to-kubernetes-in-5-easy-steps-516j
 - private docker registry
   - docker registry는 external 에서 접근할 때 TLS를 강제하므로 인증서 작업을 해줘야함
+    - http://www.zakariaamine.com/2018-07-22/creating-docker-registry-ip-address
     - https://novemberde.github.io/2017/04/09/Docker_Registry_0.html
+    - self signed certificate 생성
+      - https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04
+    - https://figo2264.github.io/2017/11/28/docker-registry-with-self-signed-certificate/
 
 ---
 
