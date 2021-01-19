@@ -30,11 +30,42 @@
         - nfs mount 확인
       - (client에서) `sudo mount <nfs server ip>:<nfs server mount path> <nfs client mount path>`로 nfs access 확인 가능
         - `sudo mount 10.1.3.58:/mnt/nfsdir /home/ubuntu/mount`
+    - enable nfs logging
+      - https://kerneltalks.com/config/nfs-logs-in-linux/
+      - ```
+        # enable logging
+        $ rpcdebug -m nfsd all
+        nfsd       sock fh export svc proc fileop auth repcache xdr lockd
+        
+        # disable logging
+        $ rpcdebug -m  nfsd -c  all
+        nfsd      <no flags set>
+        ```
+      - ubuntu18.04의 경우 `/var/log/syslog`에 logging됨
+        - `sudo tail -f /var/log/syslog | grep nfs`
   - k8s에서 nfs를 이용하려고 할 때 node들에서는 nfs client 이용시 필요한 setup을 해줘야함, e.g, `sudo yum install nfs-utils` (centos) or `sudo apt-get install nfs-common` (ubuntu)
     - k8s에서 바로 이용하기전에 직접 node -> nfs server의 connection을 확인해보면 좋음
       - mount하기 `sudo mount <nfs server hostname or ip>:<nfs server mount path> <nfs client mount path>`
       - unmount하기 `sudo umount <fns client mount path>`
-  
+
+- ansible
+  - k8s에서 nfs를 이용하려면 nfs server 뿐만아니라 nfs client도 구축을 해야한다. 각 node가 nfs client가 될 수 있으므로 모든 node(나의 경우는 총 5개)에 `sudo apt-get install nfs-common`을 해야한다.
+    - inventory
+      ```
+      [master]
+      master1 ansible_host=10.1.3.245 ip=10.1.3.245 ansible_python_interpreter=/usr/bin/python3
+
+      [node]
+      node1 ansible_host=10.1.3.58 ip=10.1.3.58 ansible_python_interpreter=/usr/bin/python3
+      node2 ansible_host=10.1.3.191 ip=10.1.3.191 ansible_python_interpreter=/usr/bin/python3
+      node3 ansible_host=10.1.3.88 ip=10.1.3.88 ansible_python_interpreter=/usr/bin/python3
+      node4 ansible_host=10.1.3.74 ip=10.1.3.74 ansible_python_interpreter=/usr/bin/python3
+      node5 ansible_host=10.1.3.228 ip=10.1.3.228 ansible_python_interpreter=/usr/bin/python3
+      ```
+    - command `ansible -i inventory.cfg node -m command -a 'apt-get install -y nfs-common' --become`
+      - `--become`은 sudo로 실행하는것을 의미
+      - `node`는 group을 의미하며 `node` group에는 node1~node5가 있음 (inventory에서 확인 가능)
+      - https://www.whatwant.com/entry/Ansible-%EC%B2%98%EC%9D%8C%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0?category=744443
 
 ---
 
