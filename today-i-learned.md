@@ -1,5 +1,43 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.19 (9)
+- nfs
+  - nfs에서 이용하는 default port는 2049임 (TCP, UDP 둘 다) => **해당 port에 대한 접근을 허용해야함**
+    - ```bash
+      ubuntu@node1:/mnt$ rpcinfo -p | grep nfs
+      100003    3   tcp   2049  nfs
+      100003    4   tcp   2049  nfs
+      100003    3   udp   2049  nfs
+      ```
+  - ubuntu18.04에 nfs server 구축하기
+    - nfs server는 크게 kernel nfs server / user nfs server가 있는데 여기서는 kernel nfs server 구축을 설명함
+      - https://www.nemonein.xyz/2020/09/4260/
+      - https://sarc.io/index.php/os/1780-ubuntu-nfs-configuration
+      - do below
+        ```
+        sudo apt-get install nfs-kernel-server
+        sudo mkdir -p /mnt/nfsdir  # create nfs dir
+        sudo chmod -R 777 /mnt/nfsdir
+        ```
+      - edit `/etc/exports`
+        - add `/mnt/nfsdir *(rw,sync,no_subtree_check,insecure)`
+        - **이유는 모르겠는데 0.0.0.0/0 같은 ip range로는 안됨** => https://stackoverflow.com/questions/65786683/0-0-0-0-0-is-not-feasible-for-nfs-configuration
+      - `sudo exportfs -arv`
+        - `/etc/exports` 설정 적용
+      - `sudo systemctl restart nfs-kernel-server`
+        - nfs server 시작
+      - `sudo showmount -e`
+        - nfs mount 확인
+      - (client에서) `sudo mount <nfs server ip>:<nfs server mount path> <nfs client mount path>`로 nfs access 확인 가능
+        - `sudo mount 10.1.3.58:/mnt/nfsdir /home/ubuntu/mount`
+  - k8s에서 nfs를 이용하려고 할 때 node들에서는 nfs client 이용시 필요한 setup을 해줘야함, e.g, `sudo yum install nfs-utils` (centos) or `sudo apt-get install nfs-common` (ubuntu)
+    - k8s에서 바로 이용하기전에 직접 node -> nfs server의 connection을 확인해보면 좋음
+      - mount하기 `sudo mount <nfs server hostname or ip>:<nfs server mount path> <nfs client mount path>`
+      - unmount하기 `sudo umount <fns client mount path>`
+  
+
+---
+
 ##### 2021.01.15 (8)
 - openVPN
   - https://github.com/Nyr/openvpn-install
