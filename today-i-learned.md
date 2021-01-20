@@ -33,7 +33,7 @@
       - `sudo showmount -e`
         - nfs mount 확인
       - (client에서) `sudo mount <nfs server ip>:<nfs server mount path> <nfs client mount path>`로 nfs access 확인 가능
-        - `sudo mount 10.1.3.58:/mnt/nfsdir /home/ubuntu/mount`
+        - e.g, `sudo mount 10.1.3.58:/mnt/nfsdir /home/ubuntu/mount`
     - enable nfs logging
       - https://kerneltalks.com/config/nfs-logs-in-linux/
       - ```
