@@ -3,6 +3,12 @@
 ##### 2021.01.20 (10)
 - k8s
   - service account / role / rolebinding / rbac.authorization.k8s.io/v1
+  - dynamic provisioning nfs
+    - nfs와 `quay.io/external_storage/nfs-client-provisioner`를 이용해서 dynamic pv provisioning이 가능하다. on-premise(private cloud)에서 사용하기 좋은것같다.
+    - https://blog.exxactcorp.com/deploying-dynamic-nfs-provisioning-in-kubernetes/
+    - https://gruuuuu.github.io/cloud/k8s-volume/#
+
+---
 
 ##### 2021.01.19 (9)
 - nfs
