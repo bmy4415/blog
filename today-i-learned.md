@@ -1,5 +1,9 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.20 (10)
+- k8s
+  - service account / role / rolebinding / rbac.authorization.k8s.io/v1
+
 ##### 2021.01.19 (9)
 - nfs
   - nfs에서 이용하는 default port는 2049임 (TCP, UDP 둘 다) => **해당 port에 대한 접근을 허용해야함**
