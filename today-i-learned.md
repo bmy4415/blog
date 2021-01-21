@@ -1,5 +1,15 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.21 (11)
+- minIO
+  - run minIO as daemon process using systemctl
+    - https://github.com/minio/minio-service/tree/master/linux-systemd
+      1. install minIO binary at /usr/local/bin: `cd /usr/local/bin; sudo wget https://dl.min.io/server/minio/release/linux-amd64/minio; sudo chmod +x minio`
+      2. create config file: `/etc/default/minio`
+      3. Install service file: `cd /etc/systemd/system/; curl -O https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service`
+      4. Change `User` and `Group` config in service file
+      5. `sudo systemctl restart minio`
+
 ##### 2021.01.20 (10)
 - k8s
   - service account / role / rolebinding / rbac.authorization.k8s.io/v1
