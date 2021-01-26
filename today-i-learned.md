@@ -1,5 +1,19 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.01.26 (12)
+- python issubclass()
+  - minIO python sdk를 보면 MinIO.put_object()의 argument 중 `data`에 `io.RawIOBase` type에 해당하는 변수를 넘겨야한다. 그런데 `io`에서는 io.BytesIO, io.StringIO 등등 다양한 IO type을 제공하는데 이때 이 다양한 IO type들과 RawIOBase와 어떤 관계인지를 확인해야 정확한 코딩을 할 수 있었다.
+  - python3.7 기준으로 https://github.com/python/cpython/blob/3.7/Lib/io.py에서 io에 대한 코드를 살펴볼 수 있다.
+  - builtin function [issubclass](https://docs.python.org/ko/3/library/functions.html#issubclass)를 통해 BuffredIOBase가 RawIOBase와 상속의 관계가 있는지 확인해볼 수 있다.
+    ```python
+    import io
+    issubclass(io.BufferedIOBase, io.RawIOBase) # false
+    issubclass(io.RawIOBase, io.BufferedIOBase) # false
+    ```
+  - minio python sdk issue 등록 (https://github.com/minio/minio-py/issues/1070)
+  
+---
+
 ##### 2021.01.21 (11)
 - minIO
   - run minIO as daemon process using systemctl
@@ -9,6 +23,8 @@
       3. Install service file: `cd /etc/systemd/system/; curl -O https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service`
       4. Change `User` and `Group` config in service file
       5. `sudo systemctl restart minio`
+
+---
 
 ##### 2021.01.20 (10)
 - k8s
