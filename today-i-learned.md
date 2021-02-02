@@ -1,5 +1,10 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021-02-02
+- k8s ingress controller
+  - https://blog.naver.com/alice_k106/221502890249
+  - dial tcp timeout뜨면 `kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission`
+
 ##### 2021.01.26 (12)
 - python issubclass()
   - minIO python sdk를 보면 MinIO.put_object()의 argument 중 `data`에 `io.RawIOBase` type에 해당하는 변수를 넘겨야한다. 그런데 `io`에서는 io.BytesIO, io.StringIO 등등 다양한 IO type을 제공하는데 이때 이 다양한 IO type들과 RawIOBase와 어떤 관계인지를 확인해야 정확한 코딩을 할 수 있었다.
