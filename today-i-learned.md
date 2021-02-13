@@ -1,9 +1,30 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
-##### 2021-02-02
+##### 2021.02.13 (14)
+- study on eks
+  - https://www.youtube.com/watch?v=O3znWPUdt18
+    - kubelet(runs on worker), kubeproxy(runs on worker), controller manager(runs on master), scheduler(runs on master) watches apiserver
+    - apiserver watches etcd
+    - kubelet, kubeproxy, controller manager, scheduler는 서로 통신을 하지 않고 container로 떠있기 때문에 잠깐 장애가 생겨도 금방 복구할 수 있지만 **apiserver, etcd**는 장애가 생기면 cluster level의 장애로 이어진다. 그러므로 apiserver, etcd는 HA(High Availabilty), 즉 여러개를 띄워놔야한다.
+      - etcd는 홀수개로 유지되어야한다. (https://blog.naver.com/alice_k106/221310093541)
+    - eks는 master node에 대한 관리를 해준다.
+    - eks는 worker node를 위해
+      - ec2 instance를 직접 관리하거나
+      - eks node groups를 이용해서 자동관리 해준다.
+    - k8s RBAC (Role Based Access Control)
+      - role: namespace 단위 resource 권한
+      - role binding: role을 user/group에 할당 (pv, pvc의 관계와 비슷한듯)
+      - cluster role: cluster 전역의 resource 권한
+    - eks에서 사용하는 AWS CNI는 resource에 VPC 내부의 real IP를 할당한다. 즉 해당 resource에 직접 접근하기가 용이하다. 또한 많은 resource(많은 수의 pod 등)를 이용한다면 충분히 넓은 ip range를 설정해야한다. 그런데 ec2 type에 따라 사용할 수 있는 network interface의 갯수가 다르므로 ip range와 ec2 type 모두를 잘 고려해야한다.
+
+---
+
+##### 2021.02.02 (13)
 - k8s ingress controller
   - https://blog.naver.com/alice_k106/221502890249
   - dial tcp timeout뜨면 `kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission`
+
+---
 
 ##### 2021.01.26 (12)
 - python issubclass()
