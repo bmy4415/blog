@@ -1,5 +1,11 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.02.14 (15)
+- aws 기본 설정
+  - https://aws-diary.tistory.com/7?category=753069d
+
+---
+
 ##### 2021.02.13 (14)
 - study on eks
   - https://www.youtube.com/watch?v=O3znWPUdt18
