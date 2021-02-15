@@ -3,6 +3,8 @@
 ##### 2021.02.14 (15)
 - aws 기본 설정
   - https://aws-diary.tistory.com/7?category=753069d
+- eks 셋업
+  - https://aws-diary.tistory.com/44?category=753089
 
 ---
 
