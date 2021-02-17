@@ -1,5 +1,26 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.02.15 (16)
+- vscode enable pylint
+  - https://github.com/JHyeok/TIL/blob/master/TIL/Python/python-black-pylint.md
+  ```
+  # settings.json
+  
+  # enable pylint
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true
+  
+  # enable black for python files (instead of prettier)
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  ```
+
+---
+
 ##### 2021.02.14 (15)
 - aws 기본 설정
   - https://aws-diary.tistory.com/7?category=753069d
