@@ -1,5 +1,15 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.02.18 (17)
+- k8s loadbalancing
+  - https://blog.getambassador.io/load-balancing-strategies-in-kubernetes-l4-round-robin-l7-round-robin-ring-hash-and-more-6a5b81595d6c
+    - 여러개의 pod을 묶기위해 하나의 service를 이용하는데 service에서 pod으로 가는 routing은 `kube-proxy`가 수행해주고 kube-proxy는 round-robin 방식을 이용한다.
+  - https://itnext.io/kubernetes-service-load-balancing-kube-proxy-and-iptables-da3ebf1c802a
+    - user proxy mode에서는 rounb-robin, iptables proxy mode에서는 randomly,
+    - iptables proxy mode에서는 ReadinessProbe를 잘 설정해야한다.
+
+---
+
 ##### 2021.02.15 (16)
 - vscode enable pylint
   - https://github.com/JHyeok/TIL/blob/master/TIL/Python/python-black-pylint.md
