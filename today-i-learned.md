@@ -3,6 +3,8 @@
 ##### 2021.02.19 (18)
 - eks loadbalaner https
   - https://aws.amazon.com/ko/premiumsupport/knowledge-center/terminate-https-traffic-eks-acm/
+- k8s node 분류
+  - https://waspro.tistory.com/582
 
 ##### 2021.02.18 (17)
 - k8s loadbalancing
