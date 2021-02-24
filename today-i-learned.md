@@ -7,7 +7,10 @@
   - https://waspro.tistory.com/582
 - aws load balancer
   - ALB(application load balancer), CLB(elb, classic load balancer), NLB(network load balancer)가 있는데 CLB에서는 websocket을 지원하지 않음
-  - k8s ingress도 그렇고 여러 blog글들도 그렇고 요새는 L7 level load balaner, 즉 ALB를 많이 사용하는
+  - k8s ingress도 그렇고 여러 blog글들도 그렇고 요새는 L7 level load balaner, 즉 ALB를 많이 사용하는것 같음
+  - https://haloworld.tistory.com/137
+
+---
 
 ##### 2021.02.18 (17)
 - k8s loadbalancing
