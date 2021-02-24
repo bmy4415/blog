@@ -1,5 +1,9 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.02.19 (18)
+- eks loadbalaner https
+  - https://aws.amazon.com/ko/premiumsupport/knowledge-center/terminate-https-traffic-eks-acm/
+
 ##### 2021.02.18 (17)
 - k8s loadbalancing
   - https://blog.getambassador.io/load-balancing-strategies-in-kubernetes-l4-round-robin-l7-round-robin-ring-hash-and-more-6a5b81595d6c
