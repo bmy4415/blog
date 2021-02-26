@@ -1,5 +1,12 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.02.26 (19)
+- k8s aws alb
+  - https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/
+  - https://github.com/kubernetes-sigs/aws-load-balancer-controller
+  - https://velog.io/@ausg/eks-k8s-elb#%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%84%A4%EC%A0%95%EC%9D%84-%ED%86%B5%ED%95%B4-https-%EA%B9%8C%EC%A7%80 
+  - https://medium.com/coinone/aws-eks%EC%97%90%EC%84%9C-alb-ingress-controller-%ED%99%9C%EC%9A%A9%EA%B8%B0-6a29aa2a1144
+
 ##### 2021.02.19 (18)
 - eks loadbalaner https
   - https://aws.amazon.com/ko/premiumsupport/knowledge-center/terminate-https-traffic-eks-acm/
