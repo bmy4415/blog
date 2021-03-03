@@ -1,11 +1,31 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.02 (20)
+- k8s Deployment strategy
+  -  https://kubernetes.io/ko/docs/concepts/workloads/controllers/deployment/
+    -  `Recreate`와 `RollingUpdate`가 있는데 default는 `RollingUpdate`이다
+    -  `Recreate`의 경우 update를 위해 현재 실행중인 모든 pod을 shutdown한 후 새로운 pod을 띄운다
+    -  `RollingUpdate`의 경우 현재 실행중인 pod중 일부를 shutdown하고 일부는 유지함으로써 **무중단배포**를 가능하게 한다. 즉 배포시점에는 구버젼과 신버젼의 pod이 동시에 실행중인 상태가 된다.
+- k8s cluster 내부에서 nginx을 써야할까?
+  - nginx를 사용하는 여러가지 이유가 있지만, 대표적인 이유로 다음의 용도가 있다.
+    -  reverse proxy server로서의 역할, 즉 외부 요청을 nginx를 통해 web app에 전송
+    -  static file serving의 역할
+    -  caching / rate limiting 등 부가 기능을 이용하기위한 용도
+  - 현재 회사의 상황은 static file (image, js, css)을 s3로 serving하고 web app은 api server의 역할만 있으며 reverse proxy의 기능은 k8s service가 해주고 있다. 이런 상황에서 굳이 nginx pod이 필요할까? => `특정 기능을 사용하기위해서라면 필요하지만 그렇지 않다면 없애는것도 가능할것같다. 또한 L7 load balancing을 이용하고싶다면 nginx pod 대신 nginx ingress controller를 이용할 수 있다.`
+    - https://velog.io/@nawnoes/Nodejs-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%EC%8B%9C-Nginx%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B0%80
+    -  https://mygumi.tistory.com/146
+    -  https://uhou.tistory.com/96
+
+---
+
 ##### 2021.02.26 (19)
 - k8s aws alb
   - https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/
   - https://github.com/kubernetes-sigs/aws-load-balancer-controller
   - https://velog.io/@ausg/eks-k8s-elb#%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%84%A4%EC%A0%95%EC%9D%84-%ED%86%B5%ED%95%B4-https-%EA%B9%8C%EC%A7%80 
   - https://medium.com/coinone/aws-eks%EC%97%90%EC%84%9C-alb-ingress-controller-%ED%99%9C%EC%9A%A9%EA%B8%B0-6a29aa2a1144
+
+---
 
 ##### 2021.02.19 (18)
 - eks loadbalaner https
