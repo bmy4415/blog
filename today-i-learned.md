@@ -1,5 +1,15 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.03 (21)
+- git merge 전략 3가지
+  - https://evan-moon.github.io/2019/08/30/commit-history-merge-strategy/
+  - create: 분리된 branch의 commit history를 그대로 합치는 방법
+  - squash: 분리된 branch의 여러 commit을 하나의 commit으로 만들어 합치는 방법, feature -> dev 간의 merge에서 유용하다. 다만 commit history를 잃을 수있다.
+  - rebase: 분리된 branch의 commit이 마치 분리되기 전 branch에서 작업한 것처럼 합치는 방법. squash와 다르게 commit history를 유지할 수 있지만 conflict 폭탄을 맞을 수 있다.
+  - 세가지 전략을 잘 골라서 쓰는것이 좋은데, create에 비해 squash/rebase가 commit history가 깔끔해진다는 장점이 있다.ㅇ
+
+---
+
 ##### 2021.03.02 (20)
 - k8s Deployment strategy
   -  https://kubernetes.io/ko/docs/concepts/workloads/controllers/deployment/
