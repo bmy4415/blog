@@ -4,7 +4,8 @@
 - 아무리 사소한 글이라도 일단 쓰고 보자.
 - https://stackoverflow.com/questions/66110223/which-branch-should-workflow-files-be-located-on-for-github-actions-to-execute-t
   - github action은 push/PR된 branch의 workflow file을 이용함. 즉 branch마다 서로 다른 workflow file을 배치하면 각 push/PR된 branch의 workflow file만 동작함
-
+- k8s rename context name
+  - https://stackoverflow.com/questions/59606449/kubectl-how-to-rename-a-context
 
 ---
 
