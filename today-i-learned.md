@@ -1,5 +1,13 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.08 (22)
+- 아무리 사소한 글이라도 일단 쓰고 보자.
+- https://stackoverflow.com/questions/66110223/which-branch-should-workflow-files-be-located-on-for-github-actions-to-execute-t
+  - github action은 push/PR된 branch의 workflow file을 이용함. 즉 branch마다 서로 다른 workflow file을 배치하면 각 push/PR된 branch의 workflow file만 동작함
+
+
+---
+
 ##### 2021.03.03 (21)
 - git merge 전략 3가지
   - https://evan-moon.github.io/2019/08/30/commit-history-merge-strategy/
