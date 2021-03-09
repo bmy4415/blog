@@ -8,6 +8,10 @@
   - 즉 프로세스 내부에서 사용하는 자료구조나 object 등을 저장될 수 있는 형태 ( 대표적으로 byte 등등 )로 변환하는것을 serialize라고 하고, serialize된 데이터를 나중에 deserialize를 통해 다시 자료구조나 object로 복원이 가능함
   - js의 경우 JSON.stringify() / JSON.parse(), python의 경우 json.dumps() / json.loads()가 각각 serialize, deserialize의 예시 함수라고 할 수 있다.
 
+- json vs yaml
+  - https://levelup.gitconnected.com/json-vs-yaml-6aa0243aefc6
+  - 둘 다 매우 유명한 serialize 방법 중 하나인데, json이 더 정형화된 형식을 가져서 parsing 성능이 좋고 yaml이 더 human readable한 형식을 가짐. 특히 yaml은 `comment를 지원함`. 그래서 config file에는 json보다 yaml이 더 유리함
+
 ---
 
 ##### 2021.03.08 (22)
