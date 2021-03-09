@@ -1,5 +1,15 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.09 (23)
+- serialize vs deserialize
+  - js나 python에서는 잘 사용하지 않지만 cs 전반에서 종종 보이는 용어라 궁금해서 정리해봄
+  - https://en.wikipedia.org/wiki/Serialization
+  > In computing, serialization (US spelling) or serialisation (UK spelling) is the process of translating a data structure or object state into a format that can be stored (for example, in a file or memory data buffer) or transmitted (for example, across a computer network) and reconstructed later (possibly in a different computer environment)
+  - 즉 프로세스 내부에서 사용하는 자료구조나 object 등을 저장될 수 있는 형태 ( 대표적으로 byte 등등 )로 변환하는것을 serialize라고 하고, serialize된 데이터를 나중에 deserialize를 통해 다시 자료구조나 object로 복원이 가능함
+  - js의 경우 JSON.stringify() / JSON.parse(), python의 경우 json.dumps() / json.loads()가 각각 serialize, deserialize의 예시 함수라고 할 수 있다.
+
+---
+
 ##### 2021.03.08 (22)
 - 아무리 사소한 글이라도 일단 쓰고 보자.
 - https://stackoverflow.com/questions/66110223/which-branch-should-workflow-files-be-located-on-for-github-actions-to-execute-t
