@@ -8,6 +8,7 @@
   - https://www.samsungsds.com/kr/insights/kubernetes_monitoring.html
 - k8s monitoring with prometheus
   - https://gruuuuu.github.io/cloud/monitoring-02/#
+    - helm을 이용하지 않고 prometheus와 grafana 구성
   - https://sysdig.com/blog/kubernetes-monitoring-prometheus/
   - prometheus는 http/https를 이용하여 metric을 수집함. config에 target을 추가하면 target_ip:target_port/metrics 경로를 일정 interval마다 call하여 데이터를 수집함
   - [traefik](https://github.com/traefik/traefik) 처럼 prometheus-friendly한 service의 경우 /metrics 경로를 통해 이미 metrics을 제공함
