@@ -1,5 +1,21 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.10 (24)
+- k8s resource monitoring tools
+  - kube dashboard / prometheus 등이 있는데, prometheus를 가장 많이 사용하는듯함
+  - **[PromCat](https://promcat.io/)을 이용하면 상당히 다양한 종류의 metric을 수집할 수 있다. 그래서 prometheus를 사용하기로 했다.**
+- k8s resource monitoring targets
+  - https://www.samsungsds.com/kr/insights/kubernetes_monitoring.html
+- k8s monitoring with prometheus
+  - https://gruuuuu.github.io/cloud/monitoring-02/#
+  - https://sysdig.com/blog/kubernetes-monitoring-prometheus/
+  - prometheus는 http/https를 이용하여 metric을 수집함. config에 target을 추가하면 target_ip:target_port/metrics 경로를 일정 interval마다 call하여 데이터를 수집함
+  - [traefik](https://github.com/traefik/traefik) 처럼 prometheus-friendly한 service의 경우 /metrics 경로를 통해 이미 metrics을 제공함
+  - nginx 등의 traditional한 service의 경우 자체 metric을 생성하는데, 이를 prometheus에서 쉽게 가져다 사용하기위해 **exporter**를 이용함
+  > An exporter is a “translator” or “adapter” program that is able to collect the server native metrics (or generate its own data observing the server behavior) and re-publish them using the Prometheus metrics format and HTTP protocol transports.
+
+---
+
 ##### 2021.03.09 (23)
 - serialize vs deserialize
   - js나 python에서는 잘 사용하지 않지만 cs 전반에서 종종 보이는 용어라 궁금해서 정리해봄
