@@ -13,6 +13,8 @@
   - [traefik](https://github.com/traefik/traefik) 처럼 prometheus-friendly한 service의 경우 /metrics 경로를 통해 이미 metrics을 제공함
   - nginx 등의 traditional한 service의 경우 자체 metric을 생성하는데, 이를 prometheus에서 쉽게 가져다 사용하기위해 **exporter**를 이용함
   > An exporter is a “translator” or “adapter” program that is able to collect the server native metrics (or generate its own data observing the server behavior) and re-publish them using the Prometheus metrics format and HTTP protocol transports.
+- helm 도입예시
+  - https://spoqa.github.io/2020/03/30/k8s-with-helm-chart.html
 
 ---
 
