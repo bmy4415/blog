@@ -47,6 +47,9 @@
         action: keep
         regex: true
     ```
+- prometheus default retention day
+  - https://prometheus.io/docs/prometheus/latest/storage/#operational-aspects
+    - prometheus는 기본적으로 15d간의 데이터를 저장함
 
 ---
 
