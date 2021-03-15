@@ -6,6 +6,47 @@
   - https://phoenixnap.com/blog/kubernetes-monitoring-best-practices
 - k8s DaemonSet
   - k8s resource type의 일종으로서 `주로 모든 node에 Pod을 배포해야할 경우 사용된다`. 예를들어 node monitoring 등의 경우 모든 node에 logging agent가 배포되어야하는데 이러한 경우 DaemonSet을 이용하면 된다. 
+- cadvisor vs node exporter
+  - cadvisor는 running container의 정보를 제공한다. cadvisor가 수집한 정보는 kubelet으로 전달이되므로 prometheus config에서는 pull target을 적절히 설정해줘야한다.
+    ```
+    - job_name: 'kubernetes-cadvisor'
+      scheme: https
+      tls_config:
+        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+      bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+
+      kubernetes_sd_configs:
+      - role: node
+      relabel_configs:
+
+      # cAdvisor information can be fetched using kube-apiserver
+      - source_labels: [__address__]
+        target_label: __address__
+        replacement: kubernetes.default.svc:443
+      - source_labels: [__meta_kubernetes_node_name]
+        regex: (.+)
+        target_label: __metrics_path__
+        replacement: /api/v1/nodes/${1}/proxy/metrics/cadvisor
+    ```
+  - node exporter는 node의 hardware information을 수집한다.
+  - 즉 cadvisor가 수집하는 cpu 사용량은 container의 cpu 사용량이고 node exporter가 수집하는 cpu 사용량은 node의 cpu 사용량이다.
+
+- `prometheus.io/scrape`, `prometheus.io/port` annotation의 의미
+  - prometheus config에서 위의 annotation을 이용하여 해당 pod에서 metric을 pull 할지 말지를 결정할 수 있다.
+    ```
+    - job_name: 'kubernetes-pods'
+
+      kubernetes_sd_configs:
+      - role: pod
+
+      relabel_configs:
+
+      # Fetch metrics from only pods where scrape is enabled
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true
+    ```
+
 ---
 
 ##### 2021.03.10 (24)
