@@ -4,6 +4,7 @@
 - 읽어보기
   - https://phoenixnap.com/kb/understanding-kubernetes-architecture-diagrams
   - https://phoenixnap.com/blog/kubernetes-monitoring-best-practices
+  - https://blog.naver.com/PostView.nhn?blogId=alice_k106&logNo=221535575875
 - k8s DaemonSet
   - k8s resource type의 일종으로서 `주로 모든 node에 Pod을 배포해야할 경우 사용된다`. 예를들어 node monitoring 등의 경우 모든 node에 logging agent가 배포되어야하는데 이러한 경우 DaemonSet을 이용하면 된다. 
 - cadvisor vs node exporter
