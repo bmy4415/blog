@@ -2,8 +2,8 @@
 
 ##### 2021.03.15 (25)
 - 읽어보기
-  -  https://phoenixnap.com/kb/understanding-kubernetes-architecture-diagrams
-
+  - https://phoenixnap.com/kb/understanding-kubernetes-architecture-diagrams
+  - https://phoenixnap.com/blog/kubernetes-monitoring-best-practices
 ---
 
 ##### 2021.03.10 (24)
