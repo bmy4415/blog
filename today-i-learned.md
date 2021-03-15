@@ -1,5 +1,11 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.15 (25)
+- 읽어보기
+  -  https://phoenixnap.com/kb/understanding-kubernetes-architecture-diagrams
+
+---
+
 ##### 2021.03.10 (24)
 - k8s resource monitoring tools
   - kube dashboard / prometheus 등이 있는데, prometheus를 가장 많이 사용하는듯함
