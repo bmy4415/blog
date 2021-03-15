@@ -1,6 +1,9 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.03.15 (25)
+- ssh to eks work node
+  - https://github.com/awslabs/amazon-eks-ami/issues/161
+  - eksctl로 eks cluster를 만들었을 경우 worker node로 ssh를 통해 접근할 수 있고 이때 user는 `ec2-user`를 이용하면 됨
 - 읽어보기
   - https://phoenixnap.com/kb/understanding-kubernetes-architecture-diagrams
   - https://phoenixnap.com/blog/kubernetes-monitoring-best-practices
