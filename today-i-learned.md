@@ -4,6 +4,7 @@
 - k8s resource request vs limit
   - https://bcho.tistory.com/1291
     - request는 최소량, limit은 최대량
+    - [blog](https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-resource-requests-and-limits)에 따르면 request와 limit을 같게하고 cpu의 경우 데이터베이스 등의 무거운 app이 아니면 100m이하로 하는게 좋다고함
   - https://itchain.wordpress.com/2018/05/16/kubernetes-resource-request-limit/
     - limit은 한계선으로 설정하고 request는 평소사용량 +10% 정도로 설정하면 좋음 그러나 정답은 없는듯함
   - https://bcho.tistory.com/1291
