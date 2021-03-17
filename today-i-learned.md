@@ -5,7 +5,10 @@
   - https://bcho.tistory.com/1291
     - request는 최소량, limit은 최대량
   - https://itchain.wordpress.com/2018/05/16/kubernetes-resource-request-limit/
-    - limit은 한계선으로 설정하고 request는 평소사용량 +10% 정도로 설정하면 좋음 그러나 
+    - limit은 한계선으로 설정하고 request는 평소사용량 +10% 정도로 설정하면 좋음 그러나 정답은 없는듯함
+  - https://bcho.tistory.com/1291
+    - cpu는 1이 1개의 vCPU 또는 cpu core를 나타낸다. 100m은 0.1과 같다.
+    - memory는 Mi, Gi를 이용하여 byte 단위로 나타낸다.
 ---
 
 ##### 2021.03.15 (25)
