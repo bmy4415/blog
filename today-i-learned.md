@@ -1,5 +1,13 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.17 (26)
+- k8s resource request vs limit
+  - https://bcho.tistory.com/1291
+    - request는 최소량, limit은 최대량
+  - https://itchain.wordpress.com/2018/05/16/kubernetes-resource-request-limit/
+    - limit은 한계선으로 설정하고 request는 평소사용량 +10% 정도로 설정하면 좋음 그러나 
+---
+
 ##### 2021.03.15 (25)
 - ssh to eks work node
   - https://github.com/awslabs/amazon-eks-ami/issues/161
