@@ -10,6 +10,9 @@
   - https://bcho.tistory.com/1291
     - cpu는 1이 1개의 vCPU 또는 cpu core를 나타낸다. 100m은 0.1과 같다.
     - memory는 Mi, Gi를 이용하여 byte 단위로 나타낸다.
+- aws alb ingress
+  - 현재는 ingress의 apiVersion을 `extensions/v1beta1`를 사용해야함 (network.k8s.io/v1를 이용하려다가 path rewrite가 안되는 문제로 삽질하였음)
+
 ---
 
 ##### 2021.03.15 (25)
