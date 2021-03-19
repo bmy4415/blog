@@ -1,5 +1,15 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.19 (27)
+- kubeconfig
+  - https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
+    - kubectl을 이용해 kubernetes cluster와 통신하기위해서는 kubeconfig가 필요하다. kubeconfig는 `clusters`, `users`, `contexts`의 3가지 부분으로 구성되어있다.
+    - 여러개의 k8s cluster에 접근할때는 각 cluster별로 kubeconfig파일을 따로 가지고 있는것이 관리의 측면에서 더 좋다.
+  - https://ahmet.im/blog/mastering-kubeconfig/
+    - kubeconfig에 관한 이해에 도움이 되는 글
+    - 하나의 kubeconfig file에 정의된 여러개의 context를 분리(split)할 수도 있고, 여러개의 kubeconfig file에 정의된 여러개의 context를 하나의 kubeconfig file로 merge할 수도 있음
+---
+
 ##### 2021.03.17 (26)
 - k8s resource request vs limit
   - https://bcho.tistory.com/1291
