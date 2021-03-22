@@ -1,5 +1,42 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.22 (28)
+- aws ec2 cpu
+  - aws ec2는 vm기반이다. 즉 aws 데이터센터에 실제 머신 (physical machine)을 들여놓고 그 내부에 아주 높은 수준의 가상화를 통해서 vm을 만든다. 여기서 높은 수준이란 pm과 동일한 수준의 vm을 의미한다. 그래서 ec2 instance type을 보면 CPU가 아니라 `vCPU`라는 용어가 있다. 이는 pm의 CPU (core와 thread)를 나누어 vm에 할당하고 vm내부에서는 다시 CPU 가상화를 통해 vCPU를 만든다. 아래의 예시는 c5.xlarge instace type의 cpuinfo이다.
+```
+[ec2-user@ip-192-168-88-94 ~]$ cat /proc/cpuinfo
+processor	: 0
+model name	: Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz
+siblings	: 4
+cpu cores	: 2
+...
+
+processor	: 1
+model name	: Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz
+siblings	: 4
+cpu cores	: 2
+
+processor	: 2
+model name	: Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz
+siblings	: 4
+cpu cores	: 2
+
+processor	: 3
+model name	: Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz
+siblings	: 4
+cpu cores	: 2
+...
+```
+  - `processor`
+    - vCPU의 cpu번호를 의미한다.
+  - `siblings`
+    - pm의 cpu에서 이 vm에 할당된 실제 thread의 갯수를 의미한다. model name에 나와있는 `Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz` cpu는 24core/48thread인데 이 중에서 현재 vm은 4thread를 사용중인 것이다.
+  - `cpu cores`
+    - pm의 cpu에서 이 vm에 할당된 실제 core의 갯수를 의미한다. 즉 24core중 현재 vm은 2core를 할당받은 것이다.
+  - `processor`에서 약간 헷갈릴 수 있는데, 이는 vCPU의 core이므로 실제 2core/4thread를 가상의 4cpu로 분할한 것이다.
+
+---
+
 ##### 2021.03.19 (27)
 - kubeconfig
   - https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
