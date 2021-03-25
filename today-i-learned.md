@@ -1,5 +1,12 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.25 (29)
+- ts-node 사용중 `Cannot find module 'typescript'`
+  - https://github.com/TypeStrong/ts-node/issues/707
+    - `typescript`를 global하게 
+
+---
+
 ##### 2021.03.22 (28)
 - aws ec2 cpu
   - aws ec2는 vm기반이다. 즉 aws 데이터센터에 실제 머신 (physical machine)을 들여놓고 그 내부에 아주 높은 수준의 가상화를 통해서 vm을 만든다. 여기서 높은 수준이란 pm과 동일한 수준의 vm을 의미한다. 그래서 ec2 instance type을 보면 CPU가 아니라 `vCPU`라는 용어가 있다. 이는 pm의 CPU (core와 thread)를 나누어 vm에 할당하고 vm내부에서는 다시 CPU 가상화를 통해 vCPU를 만든다. 아래의 예시는 c5.xlarge instace type의 cpuinfo이다.
