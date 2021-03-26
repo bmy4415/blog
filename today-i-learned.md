@@ -1,9 +1,20 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.26 (30)
+- python regex unicode
+  - 특정 string이 japanese character을 포함하는지 확인해야하는 일이 있었음
+  - https://stackoverflow.com/questions/43418812/check-whether-a-string-contains-japanese-chinese-characters
+  ```
+  # 아래와 같이 사용하면 unicode range를 이용하여 regex 사용 가능 
+  pattern = re.compile(r'[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]', re.UNICODE)
+  ```
+
+---
+
 ##### 2021.03.25 (29)
 - ts-node 사용중 `Cannot find module 'typescript'`
   - https://github.com/TypeStrong/ts-node/issues/707
-    - `typescript`를 global하게 
+    - `typescript`를 global하게 설치해야함
 
 ---
 
