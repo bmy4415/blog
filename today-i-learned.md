@@ -1,5 +1,11 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.29 (31)
+- k8s autoscaling
+  - https://www.replex.io/blog/kubernetes-in-production-best-practices-for-cluster-autoscaler-hpa-and-vpa
+
+---
+
 ##### 2021.03.26 (30)
 - python regex unicode
   - 특정 string이 japanese character을 포함하는지 확인해야하는 일이 있었음
