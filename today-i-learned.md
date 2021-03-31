@@ -1,5 +1,14 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.03.31 (32)
+- ELB / nginx timeout
+  - https://aws.amazon.com/ko/premiumsupport/knowledge-center/apache-backend-elb/
+  - http://nginx.org/en/docs/http/ngx_http_core_module.html#client_header_timeout
+  - nginx 설정에 보면 여러종류의 timeout이 있는데 이 중에서 `client_header_timeout`, `client_body_timeout`은 client가 보낸 요청의 header/body를 읽는데 걸리는 시간을 제한하는 parameter이고 `keepalive_timeout`은 한번 맺은 TCP connection을 재사용하는 option으로 client와 server사이의 connection을 유지하는 parameter이다.
+  - aws ELB와 연관지어 생각해보면 ELB idle timeout과 nginx의 keepalive timeout의 값을 설정할 때, EC2 instance의 nginx가 keepalive timeout에의해 connection을 close했을 때 이를 ELB쪽에 알릴 수 있는 방법이 없으므로 일반적으로 `ELB idle timeout < nginx keepalive timeout`으로 설정하여야 ELB쪽에서 `504 Timeout Error`를 방지할 수 있다.
+
+---
+
 ##### 2021.03.29 (31)
 - k8s autoscaling
   - https://www.replex.io/blog/kubernetes-in-production-best-practices-for-cluster-autoscaler-hpa-and-vpa
