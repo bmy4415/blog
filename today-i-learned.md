@@ -1,6 +1,6 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
-##### 2021.03.31 (32)
+##### 2021.03.31 (33)
 - ELB / nginx timeout
   - https://aws.amazon.com/ko/premiumsupport/knowledge-center/apache-backend-elb/
   - http://nginx.org/en/docs/http/ngx_http_core_module.html#client_header_timeout
@@ -8,6 +8,14 @@
   - aws ELB와 연관지어 생각해보면 ELB idle timeout과 nginx의 keepalive timeout의 값을 설정할 때, EC2 instance의 nginx가 keepalive timeout에의해 connection을 close했을 때 이를 ELB쪽에 알릴 수 있는 방법이 없으므로 일반적으로 `ELB idle timeout < nginx keepalive timeout`으로 설정하여야 ELB쪽에서 `504 Timeout Error`를 방지할 수 있다.
 
 ---
+
+##### 2021.03.30 (32)
+- elb 502 error while ec2 nginx returns 200
+  - aws eb를 이용하여 server는 관리하는 환경임
+  - eb는 자체적으로 elb / auto scaling group을 설정해줌
+  - cpu 사용량이 많고 response time이 상당히 긴 (upto 300s) http request를 받는 서버가 있는데 서버 ec2의 nginx log에서는 200을 보내주는데 client는 자꾸 502를 받음
+  - 확인해보니 elb가 ec2에 보내는 healthcheck의 return이 원활하게 오지 않았고 그 결과 elb가 해당 ec2를 `unhealthy`로 간주하였음. `**정확한 이유는 모르겠지만 unhealthy ec2에서 오는 응답은 elb가 자체적으로 5XX 에러코드를 설정하는것같음**`
+- 
 
 ##### 2021.03.29 (31)
 - k8s autoscaling
