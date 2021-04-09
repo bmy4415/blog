@@ -1,5 +1,11 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.04.09 (34)
+- Use GPU inside docker container
+  - https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
+  - https://stackoverflow.com/questions/47465696/how-do-i-specify-nvidia-runtime-from-docker-compose-yml
+  - Docker container에서 GPU를 사용하려면 Nvidia-docker를 이용해야함
+
 ##### 2021.03.31 (33)
 - ELB / nginx timeout
   - https://aws.amazon.com/ko/premiumsupport/knowledge-center/apache-backend-elb/
