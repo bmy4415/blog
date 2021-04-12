@@ -1,5 +1,9 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.04.10 (35)
+- ubuntu에서 cuda 삭제 후 재설치
+  - https://forums.developer.nvidia.com/t/cuda-install-unmet-dependencies-cuda-depends-cuda-10-0-10-0-130-but-it-is-not-going-to-be-installed/66488/5
+
 ##### 2021.04.09 (34)
 - Use GPU inside docker container
   - https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
