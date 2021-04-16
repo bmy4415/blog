@@ -1,14 +1,27 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.04.16 (36)
+- eks에서 user에게 kubectl 사용할 수 있는 권한 추가
+  - https://aws.amazon.com/ko/premiumsupport/knowledge-center/amazon-eks-cluster-access/
+  - https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
+  - 2번째 link에서 `k get cm/aws-auth -n kube-system -o yaml > temp.yaml`와 같은 방법으로 config map을 파일로 추출할 수 있음
+  - 1번째 link에서 보듯이 user의 arn을 추가하면 해당 user에게 kubectl 사용 권한을 줄 수 있음
+
+---
+
 ##### 2021.04.10 (35)
 - ubuntu에서 cuda 삭제 후 재설치
   - https://forums.developer.nvidia.com/t/cuda-install-unmet-dependencies-cuda-depends-cuda-10-0-10-0-130-but-it-is-not-going-to-be-installed/66488/5
+
+---
 
 ##### 2021.04.09 (34)
 - Use GPU inside docker container
   - https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
   - https://stackoverflow.com/questions/47465696/how-do-i-specify-nvidia-runtime-from-docker-compose-yml
   - Docker container에서 GPU를 사용하려면 Nvidia-docker를 이용해야함
+
+---
 
 ##### 2021.03.31 (33)
 - ELB / nginx timeout
