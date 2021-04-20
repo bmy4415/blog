@@ -1,5 +1,15 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.04.20 (37)
+- celery
+  - https://daeguowl.tistory.com/157
+    - queue에 있는 작업이 실행됨을 보장하기위해 `late_ack`와 같은 옵션을 사용할 수 있다. 이 옵션은 worker가 작업을 시작할 때 queue에서 task를 제거하는게 아니라 작업을 완료하고 ack가 날아오면 그제서야 task를 제거한다. task가 반드시 실행된다는 보장은 있지만 `한번만`실행된다는 보장은 없으므로 `late_ack를 사용하기 위해서는 task가 idempotent(여러번 작동해도 같은 결과를 냄) 해야한다.`
+      - `visibility_timeout` 이내에 ack가 안오면 해당 task를 새로운 worker에 다시 할당
+    - prefetch / prefork를 이용하여 performance tuning을 할 수 있다.
+      - cpu bound / IO bound task마다 설정 방법이 
+
+---
+
 ##### 2021.04.16 (36)
 - eks에서 user에게 kubectl 사용할 수 있는 권한 추가
   - https://aws.amazon.com/ko/premiumsupport/knowledge-center/amazon-eks-cluster-access/
