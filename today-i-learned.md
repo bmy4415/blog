@@ -1,5 +1,18 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.06.08 (38)
+- db buffer cache
+  - buffer pool과 비슷한 의미로 사용됨
+  - 일반적으로 table의 모든 data를 memory에 적재할 수 없으므로 일부 data만 memory에 적재하는데 적재할 때 사용하는 memory를 buffer cache 또는 buffer pool이라고 부름
+  - 당연하게도 buffer cache (= buffer fool)의 size가 클수록 db의 성능이 좋아짐
+  - 보통 db만 떠있는 instance의 경우 buffer cache의 크기를 memory의 80%정도로 하면 좋다고함
+  - 참고자료
+    - https://dus815.tistory.com/entry/Inoodb-buffer-pool-%EC%9D%B4%EB%9E%80
+    - http://cloudrain21.com/mysql-innodb-basic-performance-tunning
+    - https://owlyr.tistory.com/23
+
+---
+
 ##### 2021.04.20 (37)
 - celery
   - https://daeguowl.tistory.com/157
