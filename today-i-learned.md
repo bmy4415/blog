@@ -1,6 +1,20 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.06.08 (38)
+- db size
+    - database 크기를 확인할 수 있는 query
+    ```sql
+    SELECT 
+        table_name,
+        table_rows,
+        round(data_length/(1024*1024*1024),2) as 'DATA_SIZE(GB)',
+        round(index_length/(1024*1024*1024),2) as 'INDEX_SIZE(GB)'
+    FROM information_schema.TABLES
+    where table_schema = '<Your database name>'
+    GROUP BY table_name 
+    ORDER BY data_length DESC 
+    LIMIT 10;
+    ```
 - db partitioning
     - table의 크기가 너무 커서 query의 성능이 떨어질 때 table을 분리하여 성능을 개선시키는 행위
     - table의 row를 분산시키는 horizontal partitioning과 column을 분산시키는 vertical partitioning이 있음
