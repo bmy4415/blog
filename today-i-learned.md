@@ -1,6 +1,35 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.06.08 (38)
+- db partitioning
+    - table의 크기가 너무 커서 query의 성능이 떨어질 때 table을 분리하여 성능을 개선시키는 행위
+    - table의 row를 분산시키는 horizontal partitioning과 column을 분산시키는 vertical partitioning이 있음
+    - horizontal partitioning은 sharding이라고도 부름
+    - partitioning을 할 경우 table의 크기가 작아지기때문에 단일 table에 대한 query의 성능은 증가하지만 join의 성능은 떨어짐
+
+    ```sql
+    # Partition 예시 query
+    CREATE TABLE tb_gillog (
+
+    	id INT NOT NULL,
+    	write_date DATETIME NOT NULL,
+    	...
+    	PRIMARY KEY(id)
+    	
+    )
+
+    PARTITION BY RANGE ( YEAR(write_date) ) (
+    	
+    	PARTITION p2018 VALUES LESS THAN (2019),
+    	PARTITION p2019 VALUES LESS THAN (2020),
+    	PARTITION p2020 VALUES LESS THAN MAXVALUE
+    	
+    );
+    ```
+
+    - 참고자료
+        - [https://velog.io/@gillog/MySQL-Partition](https://velog.io/@gillog/MySQL-Partition)
+        - [https://gmlwjd9405.github.io/2018/09/24/db-partitioning.html](https://gmlwjd9405.github.io/2018/09/24/db-partitioning.html)
 - db buffer cache
   - buffer pool과 비슷한 의미로 사용됨
   - 일반적으로 table의 모든 data를 memory에 적재할 수 없으므로 일부 data만 memory에 적재하는데 적재할 때 사용하는 memory를 buffer cache 또는 buffer pool이라고 부름
