@@ -1,5 +1,20 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.06.12 (39)
+- mysql redo log
+    - aws RDB에서 PI (Performance Insight)를 보면 db load를 확인할 수 있는데 그 중에서 `io redo log flush`와 같은 요소가 있었다
+    - (일반적으로) database는 query를 수행하고 그 결과를 바로 disk에 write하지 않는다. 보통은 memory에만 수정내용을 반영하고 여러 수정내용을 묶어서 batch로 disk file에 write한다. 이렇게함으로써 disk I/O를 줄여 성능향상을 꾀할수 있다. 조금 더 구체적으로 말하자면 inno db buffer pool -> inno db log buffer -> os buffer -> disk 순으로 데이터의 이동이 발생한다. `Innodb_flush_log_at_trx_commit` 파라미터를 이용해서 그 level을 설정할 수 있다.
+    - reod log는 그 이름에서 알 수 있듯이 그 내용을 실행함으로써 db의 state를 다시 재현할 수 있는 log이다. 위의 과정에서 inno db log buffer에는 redo log가 채워진다.
+    - 참고자료
+        - https://sarc.io/index.php/mariadb/1146-innodb-redo-logging-process
+        - https://dus815.tistory.com/entry/Mysql-Redo-Log-%EB%9E%80
+- mysql bin log
+    - redo log는 mysql의 engine인 innodb level에서 생성되는 log이고 bin log는 mysql 자체, 즉 mysql server 수준에서 생성되는 log이다.
+    - 참고자료
+        - http://cloudrain21.com/mariadb-binary-log
+
+---
+
 ##### 2021.06.08 (38)
 - db size
     - database 크기를 확인할 수 있는 query
