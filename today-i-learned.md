@@ -13,6 +13,11 @@
     - 참고자료
         - http://cloudrain21.com/mariadb-binary-log
 
+- postgresql vacuum
+    - 직접 postgresql을 쓰지 않기때문에 상세하게 다루기보다는 어떤 개념인지만 정리하자면, 다른 RDBMS와 다르게 postgresql(이하 pgsql)에서는 row에 대한 update나 delete가 일어날 때 해당 row를 disk에서 update/delete하지않고 새로운 영역에 write한다. 즉 시간이 지날수록 사용되지않는 영역이 늘어나고 clear해주는것이 vacuum이다.
+    - 참고자료
+        - http://hochul.net/blog/postgresql-vacuum-optimization/
+
 ---
 
 ##### 2021.06.08 (38)
