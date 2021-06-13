@@ -1,5 +1,11 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.06.13 (40)
+- rabbitMQ tutorial with python
+    - https://blog.storyg.co/rabbitmqs/tutorials/python/01-hellowolrd
+
+---
+
 ##### 2021.06.12 (39)
 - mysql redo log
     - aws RDB에서 PI (Performance Insight)를 보면 db load를 확인할 수 있는데 그 중에서 `io redo log flush`와 같은 요소가 있었다
