@@ -1,6 +1,9 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.06.13 (40)
+- deep learning production with celery as task queue
+    - https://towardsdatascience.com/serving-deep-learning-algorithms-as-a-service-6aa610368fde
+        - long running task에는 celery같은 asynchronous task queue를 쓰면 좋은데 위 자료에 그 예시가 잘 설명되어있음
 - rabbitMQ tutorial with python
     - https://blog.storyg.co/rabbitmqs/tutorials/python/01-hellowolrd
 
