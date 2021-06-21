@@ -1,5 +1,13 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.06.21 (41)
+- vscode vs android studio
+    - 기존에 vscode를 쓰고있기때문에 안드로이드 개발을 vscode로할지 android studio로 할지 고민하다 jetbrain 계열 제품(android studio는 intelliJ 기반)을 직접 써보고싶어서 android studio로 결정
+    - vscode에서도 android개발이 가능한것 같음(emulator도 제공)
+    - https://blog.codemagic.io/android-studio-vs-visual-studio-code/
+
+---
+
 ##### 2021.06.13 (40)
 - deep learning production with celery as task queue
     - https://towardsdatascience.com/serving-deep-learning-algorithms-as-a-service-6aa610368fde
