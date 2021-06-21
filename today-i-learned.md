@@ -1,8 +1,12 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.06.21 (41)
-- rustup / rustc / cargo
+- rustup / rustc / cargo / toolchain
     - rust를 설치하면 rustup / rustc / cargo 등의 executable이 PATH에 추가됨
+    - toolchain
+        - https://butter-shower.tistory.com/24
+        - intelliJ-rust 등을 사용하다보면 `toolchain location`등 toolchain이라는 용어가 나오는데, 이는 실제 rust와 관련된 binary들이 저장된 장소이다
+        - e.g) $HOME/.rustup/toolchains/nightly-x86_64-apple-darwin/bin
     - rustup
         - https://github.com/rust-lang/rustup/tree/cef627130947d2e7a20f88030c357b11d1c1bb1f#how-rustup-works
         - https://stackoverflow.com/questions/41947210/rustup-vs-cargo-binaries
