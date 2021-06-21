@@ -1,6 +1,22 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.06.21 (41)
+- rustup / rustc / cargo
+    - rust를 설치하면 rustup / rustc / cargo 등의 executable이 PATH에 추가됨
+    - rustup
+        - https://github.com/rust-lang/rustup/tree/cef627130947d2e7a20f88030c357b11d1c1bb1f#how-rustup-works
+        - https://stackoverflow.com/questions/41947210/rustup-vs-cargo-binaries
+        - rustup은 `toolchain multiplexer`, 즉 여러개의 rust version을 설치하고 관리하게 해줌
+        - ~/.cargo에 있는 executable은 실제로는 ~/.rustup를 가르키는 proxy임 (symlink와 비슷하지만 file size를 봤을 때 symlink는 아닌듯)
+    - rustc
+        - https://doc.rust-lang.org/rustc/what-is-rustc.html#what-is-rustc
+        - **rustc는 rust compiler이며 대부분의 경우 `rustc`를 직접 call하기보다 cargo를 통해 간접으로 call함**
+    - cargo
+        - https://doc.rust-lang.org/cargo/index.html
+        - rust의 package manager
+        - nodejs의 npm, python의 pip와 같이 dependent package를 설치해주기도 하고 rust는 compile 언어이므로 compile도 해줌
+        - 내가 만든 package를 distribute할 때도 이용함
+        - **rust로 개발할 때 command line에서 이루어지는 일의 대부분을 이 명령어가 담당함**
 - database transaction
     - 여러개의 database query를 묶어서 하나의 atomic한 operation으로 만들어주는 기능
     - all or nothing을 보장하는것이지 txn(transaction)이 실패할 경우 auto-retry를 해주는 개념은 아니다
