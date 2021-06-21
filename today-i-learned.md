@@ -1,6 +1,26 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.06.21 (41)
+- aws ami (amazon machine image)
+    - ec2 등의 instance를 생성할 때 사용할 image
+    - docker image와 비슷한 개념으로 생각하면 됨
+    - 
+- kms (key management service)
+    - data를 암호화할 때 사용하는 key를 관리해주는 서비스, e.g) [aws kms](https://aws.amazon.com/ko/kms/)
+    - Oracle에서 cloud service를 개발할 때 경험했듯이 주로 특정 보안 요구사항을 충족시키기위해 사용
+    - 참고자료
+        - https://bluese05.tistory.com/71
+- webview (웹뷰)
+    - mobile app을 만들 때 모바일 기기에 내장된 web browser를 이용하여 view(화면)을 구성하는 것
+    - 즉 HTML을 이용하여 mobile app 화면을 구성하는 것
+    - 이와 같은 app을 hybrid app한다
+    - 참고자료
+        - https://hanamon.kr/%EC%9B%B9%EB%B7%B0-webview/
+- hot wallet vs cold wallet
+    - crypto currency는 wallet에 저장하고 wallet은 개인키(private key)가 있으면 제어할 수 있다
+    - hot wallet은 인터넷에 연결된 wallet, 즉 private key가 인터넷상에 있는 wallet이며 대표적으로는 중앙화거래소 (binance 등) wallet이 있다
+    - cold wallet은 인터넷에 연결되지 않은, 즉 offline wallet이고 USB 등의 hardware장치에 private key를 보관한다
+    - private key의 보관이 online보다 offline이 (일반적으로) 안전하므로 cold wallet이 더 안전하다고 할 수 있다. 하지만 사용상의 편의는 hot wallet이 더 좋다고 할 수 있다.
 - vscode vs android studio
     - 기존에 vscode를 쓰고있기때문에 안드로이드 개발을 vscode로할지 android studio로 할지 고민하다 jetbrain 계열 제품(android studio는 intelliJ 기반)을 직접 써보고싶어서 android studio로 결정
     - vscode에서도 android개발이 가능한것 같음(emulator도 제공)
