@@ -4,7 +4,13 @@
 - vscode vs android studio
     - 기존에 vscode를 쓰고있기때문에 안드로이드 개발을 vscode로할지 android studio로 할지 고민하다 jetbrain 계열 제품(android studio는 intelliJ 기반)을 직접 써보고싶어서 android studio로 결정
     - vscode에서도 android개발이 가능한것 같음(emulator도 제공)
+    - android studio는 vscode와 keymap이 다른데 (mac기준 `cmd ⬇` 등의 동작에서 다름) 이때 keymap을 sublimetext로 바꾸면 vscode와 유사한 keymap이 됨 (**vscode로 바꾸면 vscode와 유사하지 않음**)
     - https://blog.codemagic.io/android-studio-vs-visual-studio-code/
+- m1 mac android emulator
+    - 2021.06.21 현재 apple m1 processor로는 android emulator를 직접 돌리기 불가능한 상황
+    - 아래의 blog post를 보고 `android-emulator-m1-preview`를 이용하거나 android 휴대폰을 직접 mac에 연결하여 emulation 가능
+        - `android-emulator-m1-preview`는 현재 v3이 latest release인데 새로운 release가 나올때마다 작업해주기는 번거로울것 같아서 일단은 직접 android 휴대폰을 연결하는 방법을 이용하기로 결정함
+    - https://dev-repository.tistory.com/97 
 
 ---
 
