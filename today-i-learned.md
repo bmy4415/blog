@@ -1,6 +1,10 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.06.21 (41)
+- database transaction
+    - 여러개의 database query를 묶어서 하나의 atomic한 operation으로 만들어주는 기능
+    - all or nothing을 보장하는것이지 txn(transaction)이 실패할 경우 auto-retry를 해주는 개념은 아니다
+    - auto retry는 application logic에서 구현해야함 (database level에서 제공하지않음)
 - aws ami (amazon machine image)
     - ec2 등의 instance를 생성할 때 사용할 image
     - docker image와 비슷한 개념으로 생각하면 됨
