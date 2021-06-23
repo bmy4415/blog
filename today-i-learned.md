@@ -1,5 +1,38 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.06.23 (42)
+- ORM (Object Relation Mapping)
+    - db에 접근할 때 raw sql로 접근하는대신 Relation (db의 table)을 Object (프로그래밍언어에서의 객체)로 mapping하여 접근하는 방식
+    - pros
+        - db 변경했을 때 소스코드 변경이 필요없음
+        - sql query를 잘 못짜는 사람에게 도움이 됨 (orm이 알아서 짜주니까)
+        - prepared statement를 이용하기때문에 비교적 sql injection에 안전함
+    - cons
+        - raw sql을 직접 관리하는것에 비해 성능하락 가능성이 있음 (orm, db의 내부동작에 대해 정확히 이해하지 못하고 사용할 가능성이 높기때문에)
+    - 각 언어별 대표적인 ORM framework는 다음과 같음
+        - ruby: ActiveRecord
+        - python: SQLAlchemy
+        - javascript: Sequelize
+        - java: Hibernate
+    - 참고자료
+        - https://medium.com/@violetmoon/understanding-orm-frameworks-with-ruby-and-activerecord-83a9e9d8490e
+        - https://centralblue.co.uk/blog/2019/01/the-pros-and-cons-of-object-relational-mapping-orm
+- uuid
+    - unique한 id를 만들기위한 규약
+    - 128bit이자 36개 문자 (32개 alpha-numeric + 4개 hypen)
+    - v1 ~ v5까지있으며 주로 사용하는것은 v1(timestamp 기반), v4(랜덤 기반)
+    - 참고자료
+        - https://www.huskyhoochu.com/what-is-uuid/
+        - https://ko.wikipedia.org/wiki/%EB%B2%94%EC%9A%A9_%EA%B3%A0%EC%9C%A0_%EC%8B%9D%EB%B3%84%EC%9E%90
+
+- 리그레션 테스트 (regression test)
+    - 소프트웨어를 변경했을 때 기존 기능이 잘 돌아가는지 확인하는 테스트
+    - e.g) python으로 구축된 서버를 go로 전환했을 때 기존 서버에서 작동하던 기능들이 go로 전환한 서버에서도 잘 작동하는지 확인하는 테스트
+    - 참고자료
+        - http://jidum.com/jidums/view.do?jidumId=581 
+
+---
+
 ##### 2021.06.21 (41)
 - rustup / rustc / cargo / toolchain
     - rust를 설치하면 rustup / rustc / cargo 등의 executable이 PATH에 추가됨
