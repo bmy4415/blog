@@ -1,5 +1,40 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.07.06 (43)
+- mac multiple java versions setup
+    - multiple java versions라 함은 곧 multiple jdk versions라는 말이다.
+    - 여러개의 jdk를 설치한 후 [jenv](https://github.com/jenv/jenv)를 통해 global 또는 local(directory마다 다르게)로 관리할 수 있다.
+    - [openjdk](https://formulae.brew.sh/formula/openjdk) 또는 [AdoptOpenJDK](https://github.com/AdoptOpenJDK/homebrew-openjdk) 중에 이용하면 된다.
+- jdk
+    - java가 유료라고 할 떄 java language가 유료라는 의미가 아니라 jdk가 유료라는 말이다.
+    - jdk는 java compiler를 포함하는데 이를 통해 java source code를 java bytecode로 변환할 수 있다.
+    - jdk는 여러 구현체가 있다. (마치 python 구현체가 CPython과 pypy등이 있는것처럼)
+        - Oracle JDK
+        - open JDK
+            - AdoptOpenJDK
+            - Amazon Corretto
+            - etc
+    - reference
+        - https://stackoverflow.com/questions/52431764/difference-between-openjdk-and-adoptium-adoptopenjdk
+        - https://broccolies.com/2021/04/oracle-jdk%EC%99%80-open-jdk%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90-%EB%B9%84%EA%B5%90/#:~:text=%EB%8F%99%EC%9D%BC%ED%95%9C%20%EA%B8%B0%EB%B0%98%EC%9D%84%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%AF%80%EB%A1%9C,%EB%A5%BC%20%EB%8D%94%20%EC%9E%90%EC%A3%BC%20%EC%A0%9C%EA%B3%B5%ED%95%A9%EB%8B%88%EB%8B%A4.
+- jvm / jre / jdk
+    - java로 작성된 application의 실행 순서는 java source code => compiled java code (java byte code) => run on jvm => jvm created machine code ( os/machine specific ) 이다.
+    - 즉 **javac**를 이용해서 **java byte code**를 만들고 이를 **JVM**에서 실행한다. **JVM**은 platform(os)에 맞게 **bytecode**를 생성하여 실행한다.
+    - jvm (java virtual machine)
+        - java bytecode를 input으로 machine code를 output으로 낸다. 즉 각 os(linux, windows, mac 등)마다 JVM이 생성하는 machine code는 다르지만 input으로 받는 java bytecode는 동일하다. 그로인해 똑같은 java source code를 JVM을 통해 다양한 os에서 실행할 수 있다.
+    - jre (java runtime environment)
+        - JVM + class files (standard library 등)
+        - JVM은 혼자 설치할 수 없고 JRE와 같이 설치된다.
+    - jdk (java development kit)
+        - jre에 compiler, debugger 등 개발에 필요한 추가도구를 포함한다. 
+        - `java를 실행만 할 때는 JRE면 충분하고 개발을 할 때는 JDK가 필요하다.`
+    - JVM < JRE < JDK 의 포함순서가 있다.
+    - 보통은 개발용으로 java를 설치하기때문에 jdk를 설치하고 server에서 돌리는 등의 특별한 경우 jre를 설치하면 된다.
+    - reference
+        - https://devpouch.tistory.com/9
+        - https://www.guru99.com/difference-between-jdk-jre-jvm.html
+
+
 ##### 2021.06.23 (42)
 - ORM (Object Relation Mapping)
     - db에 접근할 때 raw sql로 접근하는대신 Relation (db의 table)을 Object (프로그래밍언어에서의 객체)로 mapping하여 접근하는 방식
