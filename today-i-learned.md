@@ -1,5 +1,17 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.07.08 (44)
+- NUMA (Non Uniform Memory Access)
+    - RAM(Random Access Memory)에서는 메모리의 상의 어느위치나 자유롭게 접근 가능
+    - NUMA에서는 각 cpu core마다 local memory 영역을 할당하여 ( 예를들어 4CPU 512GM RAM인 경우 1개의 CPU에 128G씩 local memory 영역 할당 ) local memory에 대해서는 훨씬 더 빠른 접근속도를 보장해줌
+    - 기존의 SMP(Symmetric Multi Processing)에서는 하나의 IO bus를 통해 여러 CPU와 RAM이 소통하지만 NUMA에서는 마치 multi bus인것처럼 작동하여 성능상의 이점을 가져갈 수 있음
+
+    - reference
+        - https://namu.wiki/w/NUMA
+        - https://wogh8732.tistory.com/399
+
+---
+
 ##### 2021.07.06 (43)
 - mac multiple java versions setup
     - multiple java versions라 함은 곧 multiple jdk versions라는 말이다.
@@ -34,6 +46,7 @@
         - https://devpouch.tistory.com/9
         - https://www.guru99.com/difference-between-jdk-jre-jvm.html
 
+---
 
 ##### 2021.06.23 (42)
 - ORM (Object Relation Mapping)
