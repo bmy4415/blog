@@ -6,6 +6,7 @@
     - TLS version과 관련된 문제로 `Data source and drivers` > `Advanced` > `Enabled TLS protocols`에서 값을 `TSLv1.2`로 바꿔주면됨
     - reference
         - https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010798199-DataGrip-upgraded-to-2021-1-2-error-occurs-when-connecting-to-database-SSLHandshakeException-
+        - https://www.lesstif.com/system-admin/java-sslhandshakeexception-29590407.html
 - kotlin object 키워드
     - singleton 객체 만들기
     - static 멤버변수/멤버함수 선언에 이용
