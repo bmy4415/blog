@@ -1,6 +1,18 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.07.19 (45)
+- rabbitMQ 용어
+    - connection
+        - 실제 connection, 주로 TCP connection
+        - long-live connection을 가정
+        - 하나의 connection을 길게 맺고 해당 connection을 이용해서 지속적으로 rabbitMQ client와 rabbitMQ server가 통신함
+    - channel
+        - 하나의 connection 내부에서 만들 수 있는 여러개의 `lightweight connections`
+        - 즉 logical connection 정도로 생각할 수 있음
+        - **` 여러개의 connection이 필요한 경우, 여러개의 TCP connection을 생성하는대신 여러개의 channel을 생성하면 됨 `**
+    - reference
+        - https://www.rabbitmq.com/channels.html
+        - https://www.rabbitmq.com/connections.html
 - datagrip sslhandshake 에러
     - `javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate).`
     - TLS version과 관련된 문제로 `Data source and drivers` > `Advanced` > `Enabled TLS protocols`에서 값을 `TSLv1.2`로 바꿔주면됨
