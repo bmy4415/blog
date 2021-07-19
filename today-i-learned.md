@@ -1,6 +1,10 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.07.19 (45)
+- mysql autoincrement column insert에 대한 rollback
+    - 어떤 txn에서 autoincrement column을 포함한 row를 insert 할 때, 만약 txn에 rollback이 일어날 경우 autoincrement column은 rollback이 되지 않는다. 예를들어 `id`라는 column에 autoincrement옵션이 있고 현재 last id가 100인데 txn에서 rollback이 일어난 경우 (즉 id=101인 row에 대한 insert rollback이 일어난 경우) 다음번 insert에서는 id에 101대신 102가 사용된다. `즉 autoincrement column에 대한 rollback은 수행되지 않는다.`
+    - reference
+        - https://stackoverflow.com/questions/449346/mysql-auto-increment-does-not-rollback
 - rabbitMQ 용어
     - connection
         - 실제 connection, 주로 TCP connection
