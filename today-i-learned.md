@@ -1,6 +1,13 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 ##### 2021.07.19 (45)
+- spring bean 개념
+    - spring에서 관리하는 object
+    - new()와 같이 직접 생성하는 instance는 bean이 아님
+    - default로 singleton instance를 생성하고 관리해줌
+        - 즉 @Component, @Bean 등의 annotation을 달아주면 spring이 자동으로 singleton instance를 생성해주고 ApplicationContext.getBean() 와 같은 형태로 해당 instance에 접근할 수 있음
+    - reference
+        - https://atoz-develop.tistory.com/entry/Spring-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B9%88Bean%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%83%9D%EC%84%B1-%EC%9B%90%EB%A6%AC
 - mysql autoincrement column insert에 대한 rollback
     - 어떤 txn에서 autoincrement column을 포함한 row를 insert 할 때, 만약 txn에 rollback이 일어날 경우 autoincrement column은 rollback이 되지 않는다. 예를들어 `id`라는 column에 autoincrement옵션이 있고 현재 last id가 100인데 txn에서 rollback이 일어난 경우 (즉 id=101인 row에 대한 insert rollback이 일어난 경우) 다음번 insert에서는 id에 101대신 102가 사용된다. `즉 autoincrement column에 대한 rollback은 수행되지 않는다.`
     - reference
