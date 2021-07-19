@@ -1,5 +1,20 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.07.19 (45)
+- datagrip sslhandshake 에러
+    - `javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate).`
+    - TLS version과 관련된 문제로 `Data source and drivers` > `Advanced` > `Enabled TLS protocols`에서 값을 `TSLv1.2`로 바꿔주면됨
+    - reference
+        - https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010798199-DataGrip-upgraded-to-2021-1-2-error-occurs-when-connecting-to-database-SSLHandshakeException-
+- kotlin object 키워드
+    - singleton 객체 만들기
+    - static 멤버변수/멤버함수 선언에 이용
+    - 익명 객체에 이용
+    - reference
+        - https://0391kjy.tistory.com/29#:~:text=%EC%BD%94%ED%8B%80%EB%A6%B0%EC%97%90%EC%84%9C%EB%8A%94%20%22object%22%20%ED%82%A4%EC%9B%8C%EB%93%9C,%EB%A5%BC%20%EC%83%9D%EC%84%B1%ED%95%9C%EB%8B%A4%EB%8A%94%20%EC%A0%90%EC%9E%85%EB%8B%88%EB%8B%A4.
+
+---
+
 ##### 2021.07.08 (44)
 - NUMA (Non Uniform Memory Access)
     - RAM(Random Access Memory)에서는 메모리의 상의 어느위치나 자유롭게 접근 가능
