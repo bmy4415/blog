@@ -1,5 +1,22 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.07.29 (46)
+- rabbitMQ virtual host
+    - logical seperation의 일종으로서 마치 namespace처럼 작용한다
+    - 즉 하나의 physical machine (e.g, EC2)에 rabbitMQ가 떠있을 때, 여러개의 vhost를 띄우면 여러개의 서로 다른 logical rabbitMQ가 떠있는 상황을 만들 수 있다
+    - client는 rabbitMQ에 접근할 때 vhost를 명시하여 접근하면 된다 (보통 default는  "/" (root)로 되어있다)
+    - reference
+        - https://www.rabbitmq.com/vhosts.html
+- java big decimal
+    - java 뿐만아니라 모든 programming language에서 실수형 값의 계산에는 오차가 있다
+    - 일반적인 경우에는 문제가되지 않지만 돈 등의 매우 정밀해야만 하는 값을 다룰때는 큰 문제가 된다
+    - java의 경우 big decimal을 이용하여 정확한 계산을 할 수 있다
+    - python의 경우 [decimal](https://docs.python.org/3/library/decimal.html) 이라는 standard library가 있다
+    - reference
+        - https://jsonobject.tistory.com/466
+
+---
+
 ##### 2021.07.19 (45)
 - spring bean 개념
     - spring에서 관리하는 object
