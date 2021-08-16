@@ -43,7 +43,7 @@
         - https://www.rabbitmq.com/connections.html
 - datagrip sslhandshake 에러
     - `javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate).`
-    - TLS version과 관련된 문제로 `Data source and drivers` > `Advanced` > `Enabled TLS protocols`에서 값을 `TSLv1.2`로 바꿔주면됨
+    - TLS version과 관련된 문제로 `Data source and drivers` > `Advanced` > `enabledTLSProtocols`에서 값을 `TLSv1.2`로 바꿔주면됨
     - reference
         - https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010798199-DataGrip-upgraded-to-2021-1-2-error-occurs-when-connecting-to-database-SSLHandshakeException-
         - https://www.lesstif.com/system-admin/java-sslhandshakeexception-29590407.html
