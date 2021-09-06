@@ -1,5 +1,30 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.09.06 (47)
+- database partitioning vs sharding
+    - DML (insert, update, delete, select)의 성능을 향상시키기 위해 table을 자르는 일련의 모든 방법을 **partitioning** 이라고 한다.
+    - partitioning 중에서 row 단위로 자르는 경우를 horizontal partitioning (또는 sharding)이라고 하고 column 단위로 자르는 경우를 vertical partitioning 이라고 한다.
+    - 일반적으로 sharding은 row 단위로 자른 table을 같은 physical db가 아닌, 서로 다른 physical db에 저장하는 경우를 말한다.
+    - 일반적으로 partitioning은 (sharding과 다르게) row 단위로 자른 table을 같은 physical db에 저장하는 경우를 말한다.
+- mysql types of partitioning
+    - range
+        - 특정 column 값을 기준으로 몇개의 범위(range)로 row를 나누는 partitioning 방법
+        - ex) 시간을 기준으로 1월~12월로 나누는 방법
+    - list
+        - 특정 column 값을 기준으로 몇개의 범위(list)로 row를 나누는 partitioning 방법
+        - ENUM과 비슷한 느낌
+        - ex) 나라를 기준으로 KOR, JAP, USA 등 몇개의 정해진 범위로 나누는방법
+    - hash
+        - INT를 return하는 column의 표현식을 기준으로 나누는 방법
+        - 표현식을 사용자가 직접 정의할 수 있음
+        - ex) YEAR(date) + 1
+    - key
+        - hash와 거의 비슷하지만 표현식을 사용자가 직접 정의하지않고 db 엔진에 내장되어있는 함수를 사용
+    - reference
+        -  https://dev.mysql.com/doc/mysql-partitioning-excerpt/8.0/en/partitioning-types.html
+
+---
+
 ##### 2021.07.29 (46)
 - rabbitMQ virtual host
     - logical seperation의 일종으로서 마치 namespace처럼 작용한다
