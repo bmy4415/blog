@@ -1,5 +1,6 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+
 ##### 2021.09.28 (48)
 - jar (java archive) vs war (web application archive)
     - 둘 다 java file을 compile한 후 압축한 파일
@@ -7,8 +8,15 @@
     - jar 파일은 jre만 있으면 (즉 jdk 없이도) 실행 가능함
     - war 파일은 jre가 아니라 tomcat 등 was를 통해서 실행 가능함
     - `WAS를 이용하지 않는 일반 application의 경우 jar를 써도 충분한듯함`
-- reference
-    - https://hye0-log.tistory.com/27
+    - reference
+        - https://hye0-log.tistory.com/27
+- spring boot release tag
+    - start.spring.io 를 통해 spring boot 프로젝트 초기설정을 할 때 version 옆에 `SNAPSHOT`, `M3` 등의 태그가 있었다.
+    - SNAPSHOT: 복원용 백업시점
+    - GA (General Availability): 테스트 완료된 정식 버전
+    - M (Milestone): 테스트버전
+    - reference
+        - https://unordinarydays.tistory.com/136
 
 ---
 
