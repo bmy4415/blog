@@ -1,5 +1,17 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.09.28 (48)
+- jar (java archive) vs war (web application archive)
+    - 둘 다 java file을 compile한 후 압축한 파일
+        - 소스코드를 compile한 class파일과 dependency로 인해 생성된 외부 jar 파일 포함
+    - jar 파일은 jre만 있으면 (즉 jdk 없이도) 실행 가능함
+    - war 파일은 jre가 아니라 tomcat 등 was를 통해서 실행 가능함
+    - `WAS를 이용하지 않는 일반 application의 경우 jar를 써도 충분한듯함`
+- reference
+    - https://hye0-log.tistory.com/27
+
+---
+
 ##### 2021.09.06 (47)
 - database partitioning vs sharding
     - DML (insert, update, delete, select)의 성능을 향상시키기 위해 table을 자르는 일련의 모든 방법을 **partitioning** 이라고 한다.
