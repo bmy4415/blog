@@ -22,6 +22,14 @@
     - 소문자만 이용
     - .을 기준으로 directory 구조가 만들어짐. 즉 `src/main/java/com/<회사이름>/<프로그램이름>` 과 같은 방식으로 directory 생성
     - `src/main/java`, `src/main/kotlin`은 maven에서 비롯된 구조로 대부분의 java/kotlin 프로젝트는 이 구조를 그대로 이용하는듯함
+- gradle / maven
+    - (python 등과 같은 interpreter 언어와 달리) java는 source code를 compile 해야햐는데 이때 주로 사용하는 tool이 gradle / maven 등이다.
+    - compile 외에도 다양한 argument를 받는 task 등을 정의 및 실행할 수 있는 build tool이다.
+    - 현재는 kotlin + gradle을 많이 사용한다.
+    - 외부 dependency (maven repo등에 올라와있는)를 명시하면 해당 jar파일을 remote에서 download하여 compile시 하나의 jar파일로 만들어준다.
+    - reference
+        - https://gamtoggi.tistory.com/101
+        - https://yelimkim98.tistory.com/2?category=896971
 
 ---
 
