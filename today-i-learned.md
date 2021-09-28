@@ -17,6 +17,11 @@
     - M (Milestone): 테스트버전
     - reference
         - https://unordinarydays.tistory.com/136
+- java package naming convention
+    - `com.<회사이름>.<프로그램이름>`과 같이 domain name의 역순으로 작성함
+    - 소문자만 이용
+    - .을 기준으로 directory 구조가 만들어짐. 즉 `src/main/java/com/<회사이름>/<프로그램이름>` 과 같은 방식으로 directory 생성
+    - `src/main/java`, `src/main/kotlin`은 maven에서 비롯된 구조로 대부분의 java/kotlin 프로젝트는 이 구조를 그대로 이용하는듯함
 
 ---
 
