@@ -1,6 +1,18 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 
+##### 2021.10.28 (49)
+- jvm
+    - micrometer jvm.used, jvm.committed, jvm.max 지표
+        - jvm.max : 최대 memory 크기 (jvm 실행시 설정)
+        - jvm.used : 현재 사용중인 memory 크기
+        - jvm.committed : 아직 사용중은 아니지만 사용대기를 위해 점유를 보장하는 크기
+        - reference
+            - https://www.baeldung.com/java-heap-used-committed-max
+            - https://github.com/micrometer-metrics/micrometer/blob/main/micrometer-core/src/main/java/io/micrometer/core/instrument/binder/jvm/JvmMemoryMetrics.java
+
+---
+
 ##### 2021.09.28 (48)
 - jar (java archive) vs war (web application archive)
     - 둘 다 java file을 compile한 후 압축한 파일
