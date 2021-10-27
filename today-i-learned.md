@@ -10,7 +10,14 @@
         - reference
             - https://www.baeldung.com/java-heap-used-committed-max
             - https://github.com/micrometer-metrics/micrometer/blob/main/micrometer-core/src/main/java/io/micrometer/core/instrument/binder/jvm/JvmMemoryMetrics.java
-
+- java gc (garbage collection)
+    - 사용하지 않는 메모리영역을 gc가 정리해줌 (c/c++에서의 free()를 대신해줌)
+    - jvm heap에는 young generation과 old generation이 있는데, 이름에서 알 수 있다시피 memory상에 오래동안 존재하는 object는 old generation에 존재하고 짧게 존재하는 object는 young generation에 존재함
+    - young generation은 다시 eden / survivor1 / survivor2 영역으로 나뉘는데, (전체 jvm을 중지하지 않는) minor GC (또는 mixed GC라고도 부르는것같음) 과정에서 eden -> survivor1 -> survivor2 -> old generation 순서로 이동함
+    - old generation이 일정 비율 이상 점유되면 major GC(또는 full GC라고도 부르는것같음)가 일어나고 이때 STW(Stop the world)라고 부르는, GC thread 이외의 모든 thread는 정지하게됨
+    - reference
+        - https://www.holaxprogramming.com/2013/07/20/java-jvm-gc/
+        - https://thinkground.studio/%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8-gc-%EB%82%B4%EC%9A%A9%EA%B3%BC-g1gc-garbage-first-garbage-collector-%EB%82%B4%EC%9A%A9/
 ---
 
 ##### 2021.09.28 (48)
