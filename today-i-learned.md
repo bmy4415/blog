@@ -2,6 +2,12 @@
 
 
 ##### 2021.10.28 (49)
+- spring getById() vs findById()
+    - getById()는 id만 가지고있는 proxy 객체를 return하고 다른 column에 access하지 않으면 db에 sql을 날리지 않음
+    - findById()는 즉시 db에 sql을 날림
+    - id만 사용할 경우 getById()를 이용하면 (db에 query를 날리지 않기때문에) 성능상의 이점이 있음. 다만 id만 사용할 경우는 거의 없으므로 보통은 findById()를 
+    - reference
+        - https://bcp0109.tistory.com/325
 - jvm
     - micrometer jvm.used, jvm.committed, jvm.max 지표
         - jvm.max : 최대 memory 크기 (jvm 실행시 설정)
