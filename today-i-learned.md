@@ -1,6 +1,19 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
 
+##### 2021.11.04 (50)
+- spring 비동기
+    - spring에서 비동기함수를 실행하려면 `@EnableAsync`, `@Async` 두개의 annotation을 이용하면 된다.
+    - `@EnableAsync` annotation을 이용해서 async config를 설정해준다. (ThreadPoolExecutor 등등)
+    - `@Async` annotation은 public method에 대해서만 동작한다.
+    - `ThreadPoolExecutor`는 최대 queueCapacity (`setQueueCapacity()`로 설정) 만큼의 task를 저장할 수 있는데 이를 초과하면 exception이 발생하니 주의
+    - `ThreadPoolExecutor`의 setWaitForTasksToCompleteOnShutdown() 와 setAwaitTerminationSeconds() method를 이용하여 graceful shutdown 구현 가능 
+    - reference
+        - https://www.hanumoka.net/2020/07/02/springBoot-20200702-sringboot-async-service/
+        - https://ocblog.tistory.com/83
+
+---
+
 ##### 2021.10.28 (49)
 - spring getById() vs findById()
     - getById()는 id만 가지고있는 proxy 객체를 return하고 다른 column에 access하지 않으면 db에 sql을 날리지 않음
