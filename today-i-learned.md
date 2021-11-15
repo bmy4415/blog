@@ -1,5 +1,18 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.11.15 (51)
+- spring test error
+    - spring test시 constructor를 이용하여 dependency injection(이하 DI)을 할 때 `No ParameterResolver registered for parameter` 와 같은 에러 발생
+    - 원인
+        - main 코드에서는 SpringIOC container가 DI를 해주지만 test code에서는 Junit5 내부에있는 Juipter라는 녀석이 constructor DI를 관리함
+        - 그러므로 main에서는 @Autowired와 같은 annotation이 없어도 알아서 DI가 잘 되지만 테스트코드에서는 @Autowired가 없는 경우 위의 에러가 발생함
+    - 해결
+        - @Autowired annotation을 적당히 붙여주면 됨
+    - reference
+        - https://minkukjo.github.io/framework/2020/06/28/JUnit-23/
+
+---
+
 
 ##### 2021.11.04 (50)
 - spring 비동기
