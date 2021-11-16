@@ -1,5 +1,17 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2021.11.16 (52)
+- aws EC2 instance 종류
+    - r (e.g, r5.large) : ram, 즉 메모리 최적화 instance
+    - c (e.g, c5.large) : cpu, 즉 CPU 최적화 instance
+    - i (e.g, i3.large) : IO, 즉 local storage read/write 최적화 (내부적으로 nvme ssd 같은 장치 이용)
+    - g, p (e.g, p4d.24xlarge, g3s.xlarge) : GPU 컴퓨팅 최적화 (가격이 상당히 비쌈)
+    - m (e.g, m5.large) : 범용 
+    - reference
+        - https://ohgym.tistory.com/62
+
+---
+
 ##### 2021.11.15 (51)
 - spring test error
     - spring test시 constructor를 이용하여 dependency injection(이하 DI)을 할 때 `No ParameterResolver registered for parameter` 와 같은 에러 발생
