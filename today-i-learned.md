@@ -1,5 +1,26 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2022.01.03 (1)
+- querydsl에서 null value에 대한 comparison
+  ```kotlin
+  fun ageGt(age: Int?): Predicate {
+    return QStudent.student.age.gt(age)
+  }
+  
+  ```
+  - 위 code 처럼 비교 대상이 null value면 Null Pointer Exception이 발생하므로 다음과 같이 null check를 해야한다
+  ```kotlin
+  fun ageGt(age: Int?): Predicate {
+    return if (age == null) {
+      QStudent.student.age.isNull
+    } else {
+      QStudent.student.age.gt(age)
+    }
+  }
+  ```
+
+---
+
 ##### 2021.11.16 (52)
 - aws EC2 instance 종류
     - r (e.g, r5.large) : ram, 즉 메모리 최적화 instance
