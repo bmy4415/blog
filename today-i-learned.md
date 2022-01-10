@@ -10,8 +10,11 @@
     * https://weicomes.tistory.com/151
     * https://cheese10yun.github.io/mysql-explian/
   * summary
+    * `possible_keys` column은 index 사용 후보일 뿐 실제 사용함을 나타내지는 않음
     * `key` column을 보면 인덱스를 사용했는지 아닌지 확인 가능
     * table의 크기가 작은 경우 등 index를 사용하는 것이 사용하지 않는 것에 비해 비효율적이면 올바른 index를 설정했어도 explain 결과에 나오지 않을 수도 있다 => 아주 많은 숫자의 row를 insert 한 후 테스트하면 좋을 것 같다.
+  * reference
+    * https://wrkbr.tistory.com/559
 
 ---
 
