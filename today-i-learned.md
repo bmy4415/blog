@@ -1,5 +1,20 @@
 ## This is TIL (Today I Learned) for logging what I learned
 
+##### 2022.01.010 (2)
+* mysql index 사용 여부 확인
+  * index를 사용하는지 확인하고싶은 dml query의 앞에 `explain` 키워드를 붙이면 된다
+    ```sql
+    explain select * from students
+    ```
+  * explain 결과의 각 column 별 의미
+    * https://weicomes.tistory.com/151
+    * https://cheese10yun.github.io/mysql-explian/
+  * summary
+    * `key` column을 보면 인덱스를 사용했는지 아닌지 확인 가능
+    * table의 크기가 작은 경우 등 index를 사용하는 것이 사용하지 않는 것에 비해 비효율적이면 올바른 index를 설정했어도 explain 결과에 나오지 않을 수도 있다 => 아주 많은 숫자의 row를 insert 한 후 테스트하면 좋을 것 같다.
+
+---
+
 ##### 2022.01.03 (1)
 - querydsl에서 null value에 대한 comparison
   ```kotlin
